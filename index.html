@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Babit Ranjan Pradhan — Clinical Data Applications</title>
+<meta name="description" content="Senior Analytics Consultant. Production R Shiny applications for clinical trial data review, built on CDISC-compliant ADaM datasets.">
+<link rel="canonical" href="https://babitrp.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Babit Ranjan Pradhan — Clinical Data Applications">
+<meta property="og:description" content="Production R Shiny for pharma R&amp;D — patient profile review, toxicity analysis, lab monitoring. CDISC-compliant ADaM in, decisions out.">
+<meta property="og:url" content="https://babitrp.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23101E1C'/%3E%3Crect x='6' y='15' width='20' height='2' fill='%231F6F6B'/%3E%3Crect x='14' y='9' width='2' height='14' fill='%23EEF1ED'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#101E1C;
+  --ink-soft:#3C4B48;
+  --surface:#EEF1ED;
+  --surface-2:#E5EAE5;
+  --rule:#C6CFC8;
+  --band:#1F6F6B;
+  --flag:#B4531B;
+  --max:66rem;
+  --nav-h:3.25rem;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --ink:#E4EAE5;
+    --ink-soft:#96A6A0;
+    --surface:#0E1715;
+    --surface-2:#16211E;
+    --rule:#2C3B36;
+    --band:#5FB3A8;
+    --flag:#E08A4B;
+  }
+}
+::selection{background:var(--band);color:var(--surface)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:5rem}
+body{
+  margin:0;background:var(--surface);color:var(--ink);
+  font-family:"Source Serif 4",Georgia,serif;
+  font-size:clamp(1rem,0.95rem + 0.25vw,1.0625rem);
+  line-height:1.6;
+}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
+p{margin:0 0 1rem}
+.mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+
+/* ---------- scroll progress: the range rail, reused ---------- */
+#progress{position:fixed;top:0;left:0;right:0;height:2px;background:transparent;z-index:60}
+#progress i{display:block;height:100%;background:var(--band);transform:scaleX(0);transform-origin:left}
+
+/* ---------- nav ---------- */
+.skip{
+  position:absolute;left:1.5rem;top:-4rem;z-index:70;
+  background:var(--ink);color:var(--surface);border:0;
+  font-family:"IBM Plex Mono",monospace;font-size:.75rem;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:.6rem 1rem;transition:top .2s;
+}
+.skip:focus{top:.5rem;color:var(--surface)}
+.nav{
+  position:sticky;top:0;z-index:50;height:var(--nav-h);
+  background:color-mix(in srgb,var(--surface) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);
+}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:100%;gap:1.5rem}
+.brand{
+  font-family:Archivo,system-ui,sans-serif;font-weight:800;font-size:0.9375rem;
+  letter-spacing:-0.02em;white-space:nowrap;
+}
+.nav ul{
+  display:flex;gap:1.5rem;list-style:none;margin:0;padding:0;
+  overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
+}
+.nav ul::-webkit-scrollbar{display:none}
+.nav a{
+  font-family:"IBM Plex Mono",monospace;font-size:0.6875rem;font-weight:500;
+  letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);
+  text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;
+  white-space:nowrap;transition:color .2s,border-color .2s;
+}
+.nav a:hover{color:var(--ink)}
+.nav a[aria-current="true"]{color:var(--band);border-bottom-color:var(--band)}
+@media(max-width:38rem){.brand{display:none}}
+
+/* ---------- shared type ---------- */
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;font-size:0.6875rem;font-weight:500;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);
+  margin:0 0 1.25rem;
+}
+h2{
+  font-family:Archivo,system-ui,sans-serif;font-weight:600;
+  font-size:clamp(1.5rem,1.2rem + 1vw,2.125rem);
+  letter-spacing:-0.025em;line-height:1.12;margin:0 0 1.25rem;max-width:22ch;
+}
+h3{font-family:Archivo,system-ui,sans-serif;font-weight:600;font-size:1.0625rem;letter-spacing:-0.01em;margin:0}
+.lede{max-width:56ch;color:var(--ink-soft);margin-bottom:3rem}
+section{padding:clamp(3.5rem,9vh,5.5rem) 0;border-top:1px solid var(--rule)}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+.rv.seen{opacity:1;transform:none}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(3.5rem,11vh,7rem) 0 clamp(3rem,7vh,4.5rem)}
+.hero h1{
+  font-family:Archivo,system-ui,sans-serif;font-weight:800;
+  font-size:clamp(2.125rem,1.3rem + 4vw,4.25rem);
+  line-height:1.03;letter-spacing:-0.035em;margin:0 0 1.5rem;max-width:20ch;
+}
+.hero h1 em{font-style:normal;color:var(--band)}
+.hero>.wrap>p{max-width:52ch;color:var(--ink-soft)}
+
+.stat{
+  display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:2.5rem 0 0;
+  padding-top:1.25rem;border-top:1px solid var(--rule);
+  font-family:"IBM Plex Mono",monospace;font-size:.75rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+}
+.stat span:first-child{color:var(--band)}
+
+/* ---------- filters ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 2rem;padding:0;list-style:none}
+.chip{
+  font-family:"IBM Plex Mono",monospace;font-size:.6875rem;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;
+  background:transparent;color:var(--ink-soft);
+  border:1px solid var(--rule);border-radius:999px;
+  padding:.4rem .85rem;cursor:pointer;transition:all .2s;
+}
+.chip:hover{border-color:var(--ink-soft);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.chip:focus-visible{outline:2px solid var(--band);outline-offset:2px}
+.count{font-family:"IBM Plex Mono",monospace;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 1.5rem}
+
+/* ---------- work ---------- */
+.work{border-top:1px solid var(--rule)}
+.work[hidden]{display:none}
+.work summary{
+  list-style:none;cursor:pointer;padding:1.25rem 0;
+  display:grid;grid-template-columns:1fr auto;gap:.35rem 1.5rem;align-items:start;
+}
+.work summary::-webkit-details-marker{display:none}
+.work summary:focus-visible{outline:2px solid var(--band);outline-offset:-2px}
+.work .cat{
+  grid-column:1/-1;font-family:"IBM Plex Mono",monospace;font-size:.6875rem;
+  font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--band);
+}
+.work .sign{
+  font-family:"IBM Plex Mono",monospace;font-size:1.125rem;color:var(--ink-soft);
+  line-height:1;transition:transform .25s;grid-row:2;
+}
+.work[open] .sign{transform:rotate(45deg)}
+.work summary h3{grid-row:2}
+.work .body{padding:0 0 1.5rem;max-width:52ch}
+.work .body p{color:var(--ink-soft);margin:0 0 .75rem}
+.work .tech{
+  font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--ink-soft);
+  padding-top:.75rem;border-top:1px solid var(--rule);margin:0;
+}
+.work .tech span::after{content:" · ";color:var(--rule)}
+.work .tech span:last-child::after{content:""}
+
+/* ---------- impact ---------- */
+.metric{padding:1.5rem 0;border-bottom:1px solid var(--rule)}
+.metric:first-of-type{border-top:1px solid var(--rule)}
+.metric-top{display:flex;justify-content:space-between;align-items:baseline;gap:1.5rem;margin-bottom:.875rem}
+.metric-what{max-width:44ch}
+.metric-org{
+  font-family:"IBM Plex Mono",monospace;font-size:.6875rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:.25rem;
+}
+.metric-val{
+  font-family:Archivo,system-ui,sans-serif;font-weight:800;
+  font-size:clamp(1.5rem,1.2rem + 1.2vw,2.25rem);letter-spacing:-.03em;
+  color:var(--flag);font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.bar{height:2px;background:var(--rule);position:relative;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--flag);transform:scaleX(0);transform-origin:left;transition:transform 1s cubic-bezier(.16,1,.3,1)}
+.metric.seen .bar i{transform:scaleX(var(--v))}
+
+/* ---------- rows (stack / roles / study) ---------- */
+.row{display:grid;gap:.35rem 2rem;padding:1.25rem 0;border-bottom:1px solid var(--rule)}
+.row:first-of-type{border-top:1px solid var(--rule)}
+@media(min-width:44rem){.row{grid-template-columns:10rem 1fr;align-items:baseline}}
+.row .key{
+  font-family:"IBM Plex Mono",monospace;font-size:.6875rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+}
+.row .key em{font-style:normal;color:var(--band)}
+.chips{font-family:"IBM Plex Mono",monospace;font-size:.8125rem;line-height:1.9;margin:0}
+.chips span{white-space:nowrap}
+.chips span::after{content:" · ";color:var(--rule)}
+.chips span:last-child::after{content:""}
+.row .titles{font-family:Archivo,system-ui,sans-serif;font-weight:600}
+.row .titles span{display:block;font-weight:400;color:var(--ink-soft);font-size:.9375rem;font-family:"Source Serif 4",serif}
+.row p{color:var(--ink-soft);margin:.5rem 0 0;max-width:52ch}
+
+/* ---------- contact ---------- */
+.contact{border-top:1px solid var(--ink)}
+.links{display:flex;flex-wrap:wrap;gap:.75rem 2rem;margin:0;padding:0;list-style:none;align-items:center}
+a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--band);padding-bottom:1px}
+a:hover{color:var(--band)}
+a:focus-visible{outline:2px solid var(--band);outline-offset:3px;border-radius:2px}
+.links a{font-family:"IBM Plex Mono",monospace;font-size:.875rem}
+#copy{
+  font-family:"IBM Plex Mono",monospace;font-size:.6875rem;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;background:transparent;
+  border:1px solid var(--rule);border-radius:999px;padding:.4rem .85rem;
+  cursor:pointer;color:var(--ink-soft);transition:all .2s;
+}
+#copy:hover{border-color:var(--ink-soft);color:var(--ink)}
+#copy:focus-visible{outline:2px solid var(--band);outline-offset:2px}
+#copy.done{background:var(--band);border-color:var(--band);color:var(--surface)}
+footer{padding:2rem 0 3rem;border-top:1px solid var(--rule)}
+footer p{
+  font-family:"IBM Plex Mono",monospace;font-size:.6875rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin:0;
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  .bar i{transform:scaleX(var(--v))}
+}
+</style>
+</head>
+<body>
+
+<div id="progress" aria-hidden="true"><i></i></div>
+
+<a href="#work" class="skip">Skip to work</a>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <span class="brand">Babit Ranjan Pradhan</span>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#measured">Measured</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#where">Where</a></li>
+      <li><a href="#study">Study</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Senior Analytics Consultant — Bengaluru</p>
+    <h1>I build the applications clinical teams use to <em>read their own trial data</em>.</h1>
+    <p>Production R Shiny for pharma R&amp;D — patient profile review, toxicity analysis,
+       lab monitoring. CDISC-compliant ADaM in, decisions out. Validated environments,
+       real users, no sandbox.</p>
+
+    <p class="stat"><span>2017 — Present</span><span>9 years analytics</span><span>4 clinical</span></p>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap rv">
+    <p class="eyebrow">Work</p>
+    <h2>Eleven things I've built. Open one.</h2>
+    <p class="lede">Most of this is client-side and private — regulated pharma code doesn't
+       leave the client environment. Described here by what it does, not by whose it is.</p>
+
+    <ul class="filters">
+      <li><button class="chip" data-f="all" aria-pressed="true">All</button></li>
+      <li><button class="chip" data-f="clinical" aria-pressed="false">Clinical</button></li>
+      <li><button class="chip" data-f="ai" aria-pressed="false">AI / ML</button></li>
+      <li><button class="chip" data-f="eng" aria-pressed="false">Data engineering</button></li>
+    </ul>
+    <p class="count" id="count" aria-live="polite">11 shown</p>
+
+    <details class="work" data-c="clinical">
+      <summary><span class="cat">Clinical</span><h3>Patient profile review application</h3><span class="sign">+</span></summary>
+      <div class="body">
+        <p>Patient-level dashboards for trial monitoring. A reviewer picks a subject and
+           gets demographics, exposure, events and labs on one surface instead of four.</p>
+        <p>Modular upload with intelligent variable mapping and progressive disclosure —
+           the team gets to their data without reading a manual first.</p>
+        <p class="tech"><span>R</span><span>Shiny modules</span><span>reactable</span><span>ADaM</span><span>Posit Connect</span></p>
+      </div>
+    </details>
+
+    <details class="work" data-c="clinical">
+      <summary><span class="cat">Clinical</span><h3>Toxicity rules analysis tool</h3><span class="sign">+</span></summary>
+      <div class="body">
+        <p>Grade-based flagging across adverse event data, with the rule logic exposed to
+           the reviewer rather than buried in a script nobody can audit.</p>
+        <p class="tech"><span>R</span><span>Shiny</span><span>ADAE</span><span>gt</span></p>
+      </div>
+    </details>
+
+    <details class="work" data-c="clinical">
+      <summary><span class="cat">Clinical</span><h3>Laboratory data monitoring platform</h3><span class="sign">+</span></summary>
+      <div class="body">
+        <p>Lab values read against reference ranges across visit windows. Out-of-range
+           results surface without the reviewer having to go looking for them.</p>
+        <p class="tech"><span>R</span><span>Shiny</span><span>ADLB</span><span>Plotly</span></p>
+      </div>
+    </details>
+
+    <details class="work" data-c="clinical">
+      <summary><span class="cat">Clinical</span><h3>Interactive tables with header-level statistics</h3><span class="sign">+</span></summary>
+      <div class="body">
+        <p>Tables built on <span class="mono">reactable</span> that carry statistical
+           metadata in the column headers. The summary lives where the reader already is,
+           not in a panel they have to open.</p>
+        <p class="tech"><span>reactable</span><span>cards / ARD</span><span>htmlwidgets</span></p>
+      </div>
+    </details>
+
+    <details class="work" data-c="clinical">
+      <summary><span class="cat">Clinical</span><h3>Synthetic ADaM dataset generator</h3><span class="sign">+</span></summary>
+      <div class="body">
+        <p>Test data that holds statistical properties <em>and</em> patient-level linkage
+           across domains — the part most synthetic data drops, and the part that breaks
+           validation when it does.</p>
+        <p class="tech"><span>R</span><span>pharmaverse</span><span>haven</span><span>CDISC</span></p>
+      </div>
+    </details>
+
+    <details class="work" data-c="clinical">
+      <summary><span class="cat">Clinical</span><h3>PDF output comparison</h3><span class="sign">+</span></summary>
+      <div class="body">
+        <p>Diffing generated clinical reports between runs, so a change in output traces
+           back to a change in input rather than to a reviewer's memory.</p>
+        <p class="tech"><span>R</span><span>Python</span><span>PDF tooling</span></p>
+      </div>
+    </details>
+
+    <details class="work" data-c="ai">
+      <summary><span class="cat">AI / ML</span><h3>Natural-language query over ADaM</h3><span class="sign">+</span></summary>
+      <div class="body">
+        <p>Ask a question in English, get the filtered dataset. The model sees schema and
+           metadata only — never patient data — and generated queries pass validation
+           gates before anything runs.</p>
+        <p class="tech"><span>R</span><span>Shiny</span><span>plumber</span><span>dplyr codegen</span><span>pharmaverseadam</span></p>
+      </div>
+    </details>
+
+    <details class="work" data-c="ai">
+      <summary><span class="cat">AI / ML</span><h3>Self-hosted inference under a memory ceiling</h3><span class="sign">+</span></summary>
+      <div class="body">
+        <p>Enterprise infrastructure with a hard RAM cap won't hold full-precision weights.
+           Quantized GGUF models behind a <span class="mono">plumber</span> endpoint,
+           bridged through <span class="mono">reticulate</span>, run inside it.</p>
+        <p class="tech"><span>llama.cpp</span><span>GGUF Q4_K_M</span><span>plumber</span><span>reticulate</span><span>Posit Connect</span></p>
+      </div>
+    </details>
+
+    <details class="work" data-c="ai">
+      <summary><span class="cat">AI / ML</span><h3>Clinical plot extraction</h3><span class="sign">+</span></summary>
+      <div class="body">
+        <p>Reading data back out of published clinical figures — forest plots,
+           Kaplan-Meier survival curves, treatment comparison charts.</p>
+        <p class="tech"><span>Python</span><span>OCR</span><span>computer vision</span></p>
+      </div>
+    </details>
+
+    <details class="work" data-c="eng">
+      <summary><span class="cat">Data engineering</span><h3>Automated processing pipelines</h3><span class="sign">+</span></summary>
+      <div class="body">
+        <p>Pre- and post-processing automation that removed the manual step between data
+           landing and analysis starting. Cut processing time by three quarters.</p>
+        <p class="tech"><span>Python</span><span>SQL</span><span>PostgreSQL</span></p>
+      </div>
+    </details>
+
+    <details class="work" data-c="eng">
+      <summary><span class="cat">Data engineering</span><h3>Predictive models for demand and behaviour</h3><span class="sign">+</span></summary>
+      <div class="body">
+        <p>Consumer buying behaviour and sales pattern analysis feeding manufacturing and
+           stock decisions. Twenty percent efficiency improvement downstream.</p>
+        <p class="tech"><span>Python</span><span>R</span><span>scikit-learn</span></p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="measured">
+  <div class="wrap rv">
+    <p class="eyebrow">Measured</p>
+    <h2>Shipped work, and what moved after it.</h2>
+
+    <div class="metric" style="--v:.20">
+      <div class="metric-top">
+        <div class="metric-what"><span class="metric-org">Quantzig</span>
+          Predictive models for buying behaviour and sales patterns
+          <span class="mono">→</span> manufacturing efficiency and stock management</div>
+        <div class="metric-val">+20%</div>
+      </div><div class="bar"><i></i></div>
+    </div>
+
+    <div class="metric" style="--v:.75">
+      <div class="metric-top">
+        <div class="metric-what"><span class="metric-org">Kantar</span>
+          Python automation of pre/post-processing pipelines
+          <span class="mono">→</span> processing time</div>
+        <div class="metric-val">−75%</div>
+      </div><div class="bar"><i></i></div>
+    </div>
+
+    <div class="metric" style="--v:.40">
+      <div class="metric-top">
+        <div class="metric-what"><span class="metric-org">Kantar</span>
+          Reusable ML and knowledge-based assets
+          <span class="mono">→</span> project efficiency</div>
+        <div class="metric-val">+40%</div>
+      </div><div class="bar"><i></i></div>
+    </div>
+
+    <div class="metric" style="--v:.25">
+      <div class="metric-top">
+        <div class="metric-what"><span class="metric-org">Kantar</span>
+          Workflow and documentation standards
+          <span class="mono">→</span> project timelines</div>
+        <div class="metric-val">−25%</div>
+      </div><div class="bar"><i></i></div>
+    </div>
+
+    <div class="metric" style="--v:.25">
+      <div class="metric-top">
+        <div class="metric-what"><span class="metric-org">Growth Hack Solutions</span>
+          Client pricing and advertisement strategy
+          <span class="mono">→</span> sales</div>
+        <div class="metric-val">+25%</div>
+      </div><div class="bar"><i></i></div>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap rv">
+    <p class="eyebrow">Stack</p>
+    <h2>What it's actually built with.</h2>
+    <div class="row"><div class="key">Applications</div><p class="chips"><span>R</span><span>Shiny</span><span>bslib</span><span>reactable</span><span>Plotly</span><span>cards / ARD</span><span>gt</span></p></div>
+    <div class="row"><div class="key">Services</div><p class="chips"><span>plumber</span><span>mirai</span><span>ExtendedTask</span><span>reticulate</span></p></div>
+    <div class="row"><div class="key">Quality</div><p class="chips"><span>testthat</span><span>lintr</span><span>renv</span></p></div>
+    <div class="row"><div class="key">Clinical</div><p class="chips"><span>CDISC / ADaM</span><span>pharmaverse</span><span>haven</span></p></div>
+    <div class="row"><div class="key">ML / AI</div><p class="chips"><span>Python</span><span>scikit-learn</span><span>llama.cpp</span><span>GGUF</span></p></div>
+    <div class="row"><div class="key">Data</div><p class="chips"><span>SQL</span><span>PostgreSQL</span></p></div>
+    <div class="row"><div class="key">Deployment</div><p class="chips"><span>Posit Connect</span><span>Kubeflow</span><span>Docker</span></p></div>
+  </div>
+</section>
+
+<section id="where">
+  <div class="wrap rv">
+    <p class="eyebrow">Where</p>
+    <h2>Nine years, four of them clinical.</h2>
+
+    <div class="row">
+      <div class="key"><em>2022 — Present</em></div>
+      <div><div class="titles">Quantzig<span>Senior Analytics Consultant, 2025— · Analytics Consultant, 2022–2024 · Bengaluru</span></div>
+        <p>Architected and built production R Shiny for clinical trial data visualization:
+           patient profile dashboards, toxicity rules analysis, lab monitoring on ADaM
+           datasets. Before the clinical work — executive dashboards and KPI systems,
+           predictive modeling, and analysis presented directly to C-level stakeholders.</p></div>
+    </div>
+
+    <div class="row">
+      <div class="key">2020 — 2022</div>
+      <div><div class="titles">Kantar<span>Consultant, Data Strategy &amp; Engineering · Senior Analyst, Data Strategy &amp; Democratization</span></div>
+        <p>Automation pipelines, reusable ML and knowledge assets, and process optimization
+           across project delivery.</p></div>
+    </div>
+
+    <div class="row">
+      <div class="key">2019</div>
+      <div><div class="titles">Analytics Quotient<span>Business Analyst · Bangalore</span></div></div>
+    </div>
+
+    <div class="row">
+      <div class="key">2017 — 2019</div>
+      <div><div class="titles">Growth Hack Solutions<span>Business Analyst · Hyderabad</span></div>
+        <p>Built a data warehouse for business-critical reporting. Hypothesis testing to
+           validate interpretations before they reached strategy decisions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="study">
+  <div class="wrap rv">
+    <p class="eyebrow">Study</p>
+    <h2>Electrical engineering, then data science.</h2>
+
+    <div class="row">
+      <div class="key">2019</div>
+      <div><div class="titles">Great Lakes Institute of Management<span>PGP, Data Science &amp; Business Analytics</span></div></div>
+    </div>
+
+    <div class="row">
+      <div class="key">2013 — 2017</div>
+      <div><div class="titles">C.V. Raman College of Engineering<span>B.Tech, Electrical Engineering</span></div></div>
+    </div>
+
+    <div class="row">
+      <div class="key">Certifications</div>
+      <p class="chips"><span>Python for Data Science</span><span>Data Analysis Using Python</span><span>SQL Fundamentals</span><span>Statistics 101</span><span>Totally Integrated Automation</span></p>
+    </div>
+
+    <div class="row">
+      <div class="key">Recognition</div>
+      <p class="chips"><span>Certificate of Recognition — Recent Trends and Innovation in Engineering and Technology</span></p>
+    </div>
+
+    <div class="row">
+      <div class="key">Languages</div>
+      <p class="chips"><span>Odia — native</span><span>Hindi — full professional</span><span>English — professional working</span></p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap rv">
+    <p class="eyebrow">Contact</p>
+    <h2>Clinical data platforms, pharma analytics, decision support.</h2>
+    <p class="lede">If you're building in that space, I'm worth an email.</p>
+    <ul class="links">
+      <li><a href="mailto:pradhan.babit@gmail.com">pradhan.babit@gmail.com</a></li>
+      <li><button id="copy" type="button">Copy</button></li>
+      <li><a href="https://www.linkedin.com/in/babit-ranjan-pradhan/">LinkedIn</a></li>
+      <li><a href="https://github.com/babitrp">GitHub</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="wrap"><p>Babit Ranjan Pradhan · Bengaluru</p></footer>
+
+<script>
+// scroll progress
+const bar = document.querySelector('#progress i');
+addEventListener('scroll', () => {
+  const max = document.body.scrollHeight - innerHeight;
+  bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+}, { passive: true });
+
+// reveal + impact bars
+const rv = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('seen'); rv.unobserve(e.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll('.rv, .metric').forEach(el => rv.observe(el));
+
+// scroll-spy
+const links = [...document.querySelectorAll('.nav a')];
+const spy = new IntersectionObserver((es) => {
+  es.forEach(e => {
+    if (!e.isIntersecting) return;
+    links.forEach(a => a.setAttribute('aria-current', a.hash === '#' + e.target.id));
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+document.querySelectorAll('section[id]').forEach(s => spy.observe(s));
+
+// work filter
+const items = [...document.querySelectorAll('.work')];
+const count = document.getElementById('count');
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const f = chip.dataset.f;
+    document.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c === chip));
+    let n = 0;
+    items.forEach(el => {
+      const show = f === 'all' || el.dataset.c === f;
+      el.hidden = !show;
+      if (!show) el.open = false;
+      if (show) n++;
+    });
+    count.textContent = `${n} shown`;
+  });
+});
+
+// copy email
+const copy = document.getElementById('copy');
+copy.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText('pradhan.babit@gmail.com');
+    copy.textContent = 'Copied';
+    copy.classList.add('done');
+    setTimeout(() => { copy.textContent = 'Copy'; copy.classList.remove('done'); }, 1800);
+  } catch {
+    copy.textContent = 'Press Ctrl+C';
+  }
+});
+</script>
+</body>
+</html>
