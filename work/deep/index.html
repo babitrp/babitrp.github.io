@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEEP dose-escalation platform · Babit Ranjan Pradhan</title>
+<meta name="description" content="R Shiny platform for Phase I dose-escalation design, simulation and live dose recommendation: 3+3, BOIN, mTPI-2, BLRM and more. Sole developer.">
+<meta name="author" content="Babit Ranjan Pradhan">
+<link rel="canonical" href="https://babitrp.github.io/work/deep/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Babit Ranjan Pradhan">
+<meta property="og:title" content="DEEP dose-escalation platform · Babit Ranjan Pradhan">
+<meta property="og:description" content="R Shiny platform for Phase I dose-escalation design, simulation and live dose recommendation: 3+3, BOIN, mTPI-2, BLRM and more. Sole developer.">
+<meta property="og:url" content="https://babitrp.github.io/work/deep/">
+<meta property="og:image" content="https://babitrp.github.io/assets/og/deep.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DEEP dose-escalation platform · Babit Ranjan Pradhan">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DEEP dose-escalation platform · Babit Ranjan Pradhan">
+<meta name="twitter:description" content="R Shiny platform for Phase I dose-escalation design, simulation and live dose recommendation: 3+3, BOIN, mTPI-2, BLRM and more. Sole developer.">
+<meta name="twitter:image" content="https://babitrp.github.io/assets/og/deep.jpg">
+<meta name="theme-color" content="#0E1424">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E1424'/%3E%3Crect x='7' y='15' width='18' height='2.5' rx='1' fill='%238EA4FF'/%3E%3Crect x='14.75' y='8' width='2.5' height='16' rx='1' fill='%23EEF1F8'/%3E%3C/svg%3E">
+<script>try{if(localStorage.getItem("bp-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"DEEP dose-escalation platform","description":"R Shiny platform for Phase I dose-escalation design, simulation and live dose recommendation: 3+3, BOIN, mTPI-2, BLRM and more. Sole developer.","url":"https://babitrp.github.io/work/deep/","image":"https://babitrp.github.io/assets/og/deep.jpg","author":{"@type":"Person","name":"Babit Ranjan Pradhan","url":"https://babitrp.github.io/"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body data-root="../../">
+<div id="progress" aria-hidden="true"><i></i></div>
+<a href="#dp-tour" class="skip">Skip to content</a>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="../../">Babit Ranjan Pradhan<span>.</span></a>
+    <ul id="navlist"><li><a href="../../#work">Projects</a></li><li><a href="../../#expertise">Expertise</a></li><li><a href="../../#engineering">Engineering</a></li><li><a href="../../#ai">AI / ML</a></li><li><a href="../../#impact">Impact</a></li><li><a href="../../#experience">Experience</a></li><li><a href="../../#skills">Skills</a></li><li><a href="../../#contact">Contact</a></li></ul>
+    <div class="nav-r">
+      <a class="btn resume" href="../../resume.pdf" download>Resume</a>
+      <button class="menu" id="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navlist">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <button class="theme" id="theme" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+      </button>
+      <a class="btn pri" href="mailto:pradhan.babit@gmail.com">Email me</a>
+    </div>
+  </div>
+</nav>
+<main id="main">
+
+<article class="case" id="dp-root" aria-labelledby="dp-h">
+  <div class="wrap crumbs"><a href="../../#work">&larr; All work</a></div>
+  <header class="wrap case-hero">
+    <p class="eyebrow">Case study · Early-phase trial design</p>
+    <h1 id="dp-h">DEEP <em>dose-escalation</em> platform</h1>
+    <p class="intro">An R Shiny application for planning and running Phase I dose-escalation trials. Statisticians compare designs by simulation before the study starts, then enter real cohort data for the next-dose recommendation while it runs.</p>
+    <dl class="cfacts"><div><dt>Role</dt><dd>Sole developer</dd></div><div><dt>Domain</dt><dd>Phase I trial design</dd></div><div><dt>Validation</dt><dd>Validated by its users</dd></div><div><dt>Walkthrough</dt><dd>Live simulator</dd></div></dl>
+    <div class="cimpact" aria-label="Impact"><div><b>~2 days → 1 hour</b><span>to compare designs across scenarios for a study, against scripting each simulation</span><small>Estimate · per study</small></div><div><b>Async</b><span>simulations run in the background, so the app stays responsive while thousands of trials compute</span><small>Interactive by design</small></div></div>
+  </header>
+  <section aria-labelledby="dp-w-h"><div class="wrap">
+    <p class="eyebrow">Walkthrough</p>
+    <h2 id="dp-w-h">Simulate a trial before you run it.</h2>
+    <p class="lede">Compare the classic 3+3 rule with BOIN, two of the seven designs in DEEP, across thousands of simulated trials.</p>
+    <p class="label live"><i></i>Guided live demo · simulations run in your browser</p>
+    <div class="tour" id="dp-tour" data-kind="live" data-p="dp">
+  <div class="bar"><span class="count">Step 1 of 1</span><progress max="1" value="0" aria-label="Walkthrough progress"></progress></div>
+  <div class="lstage">
+    <div class="app" style="--band:#B45309;--band-soft:color-mix(in srgb,#B45309 10%,#fff)"><div class="app-bar"><span class="app-brand"><svg viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="var(--band)"/><path d="M5 13.5h10M5 10h6M5 6.5h8" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>DEEP</span><span class="app-nav" aria-hidden="true"><span class="on">Single agent</span><span class="">Two agents</span><span class="">Dose optimisation</span><span class="">Help</span><span class="">Session info</span></span><span class="app-right" aria-hidden="true">User guide</span></div><div class="app-body"><div class="app-side">
+  <p class="app-sec">Study setup</p>
+  <div class="dgrid">
+    <label class="field">Target DLT rate
+      <select id="dp-tgt"><option value="0.2">0.20</option><option value="0.25" selected>0.25</option>
+        <option value="0.3">0.30</option><option value="0.33">0.33</option></select></label>
+    <label class="field">BOIN max N
+      <select id="dp-nmax"><option>18</option><option>24</option><option selected>30</option><option>36</option></select></label>
+    <label class="field">Simulations
+      <select id="dp-nsim"><option>500</option><option selected>2000</option><option>5000</option></select></label>
+    <label class="field">Seed <input id="dp-seed" type="number" value="2024" min="1" step="1"></label>
+  </div>
+  <p class="app-sec" id="dp-dl-lab">True DLT probability</p>
+  <div class="doses" role="group" aria-labelledby="dp-dl-lab">
+    <label class="field">D1 <input type="number" min="0" max="1" step="0.01" value="0.05"></label>
+    <label class="field">D2 <input type="number" min="0" max="1" step="0.01" value="0.12"></label>
+    <label class="field">D3 <input type="number" min="0" max="1" step="0.01" value="0.25"></label>
+    <label class="field">D4 <input type="number" min="0" max="1" step="0.01" value="0.40"></label>
+    <label class="field">D5 <input type="number" min="0" max="1" step="0.01" value="0.55"></label>
+  </div>
+  <p class="app-sec">Scenarios</p>
+  <div class="presets">
+    <button class="btn" type="button" data-p="0.05,0.12,0.25,0.40,0.55">MTD at D3</button>
+    <button class="btn" type="button" data-p="0.02,0.05,0.08,0.12,0.25">MTD at D5</button>
+    <button class="btn" type="button" data-p="0.25,0.40,0.50,0.60,0.70">MTD at D1</button>
+    <button class="btn" type="button" data-p="0.45,0.55,0.65,0.75,0.85">All too toxic</button>
+  </div>
+  <button class="btn pri wide" id="dp-run" type="button">Run simulation</button>
+  <span class="err" id="dp-err" role="alert"></span>
+  </div><div class="app-main"><div class="app-head"><b>Toxicity · Simulation</b><span>3+3 against BOIN, five dose levels</span></div>
+  <div class="kpis" id="dp-kpis" aria-live="polite"></div>
+  <div class="app-card"><div class="app-card-h"><span>Operating characteristics</span></div><div class="app-card-b">
+    <div class="tabs" role="tablist" aria-label="Simulation results">
+      <button role="tab" aria-selected="true" data-t="sel" id="dp-tab-sel">MTD selection</button>
+      <button role="tab" aria-selected="false" data-t="pts" id="dp-tab-pts">Patients per dose</button>
+      <button role="tab" aria-selected="false" data-t="dlt" id="dp-tab-dlt">DLTs per dose</button>
+      <button role="tab" aria-selected="false" data-t="tab" id="dp-tab-tab">BOIN decision table</button>
+    </div>
+    <div id="dp-pane" role="tabpanel" aria-labelledby="dp-tab-sel"></div></div></div></div></div></div>
+    <button class="hot" type="button" aria-label=""></button>
+    <div class="tip" aria-live="polite" role="status"></div>
+  </div>
+  <div class="controls">
+    <button class="btn" type="button" data-a="prev">Previous</button><span class="hint"></span>
+    <button class="btn" type="button" data-a="restart" hidden>Restart</button><button class="btn pri" type="button" data-a="next">Next</button>
+  </div>
+</div>
+    <p class="note">3+3: standard cohorts of three with the 1/6 expansion rule. BOIN: Liu &amp; Yuan (2015) boundaries
+      with &phi;&#8321;&nbsp;=&nbsp;0.6&phi;, &phi;&#8322;&nbsp;=&nbsp;1.4&phi;, dose elimination at P(p&nbsp;&gt;&nbsp;&phi;)&nbsp;&gt;&nbsp;0.95 and
+      MTD chosen by isotonic regression. The right dose is the one whose true DLT rate is closest to the target.</p>
+  </div></section>
+  <section aria-labelledby="dp-c-h"><div class="wrap">
+    <p class="eyebrow">Case study</p>
+    <h2 id="dp-c-h">From one script per design to a single, validated platform.</h2>
+    <div class="row"><div class="key">Problem</div><div><p>Choosing a dose-escalation design meant a separate script for each design and scenario. Comparing operating characteristics took days, and live dose decisions depended on whoever owned the code.</p></div></div><div class="row"><div class="key">My role</div><div><p>Sole developer: architecture, statistical engines, user interface, simulation reports and documentation.</p></div></div><div class="row"><div class="key">I designed and built</div><div><ul class="chal"><li>The design library: 3+3, mTPI, mTPI-2, BOIN, BLRM, joint toxicity-efficacy and two-agent combination designs.</li><li>The simulation engine, with seeded scenarios and background execution.</li><li>The live analysis flow that turns cohort data into a next-dose recommendation.</li><li>Reports, saved parameter sets, and the user and technical guides.</li></ul></div></div><div class="row"><div class="key">Team</div><div><p>Built alone. The statisticians who use it defined the designs and accepted the app.</p></div></div><div class="row"><div class="key">Architecture</div><div><ol class="flow"><li><b>Study setup</b><span>dose levels · units · study details</span></li><li><b>Design library</b><span>3+3 · mTPI · mTPI-2 · BOIN · BLRM · JMTE · two-agent combination</span></li><li><b>Simulation engine</b><span>seeded scenarios · background jobs · JAGS MCMC</span></li><li><b>Outputs</b><span>operating characteristics · decision tables · PDF report</span></li><li><b>Live analysis</b><span>cohort data in · next-dose recommendation</span></li></ol></div></div><div class="row"><div class="key">Technologies</div><div><p class="chips"><span>R</span><span>Shiny</span><span>JAGS</span><span>asynchronous processing</span><span>Bayesian methods</span><span>PDF reporting</span></p></div></div><div class="row"><div class="key">Decisions &amp; trade-offs</div><div><ul class="chal"><li><b>Simulations as background jobs.</b> Statisticians keep working while thousands of trials compute. <em class="to">Trade-off: job state and progress have to be managed explicitly.</em></li><li><b>MCMC (JAGS) for model-based designs.</b> Flexible priors for BLRM and combination designs. <em class="to">Trade-off: slower runs, which is why seeds and async execution matter.</em></li><li><b>Setup changes reset dependent results.</b> No result can silently refer to an old setup. <em class="to">Trade-off: users re-run designs after changing doses, by design.</em></li></ul></div></div><div class="row"><div class="key">Challenges</div><div><ul class="chal"><li><b>Thousands of MCMC trials per scenario.</b> Simulations run asynchronously in the background, so the interface stays responsive and several designs can be compared in one session.</li><li><b>Reproducibility.</b> Seeds on every stochastic step, and parameter sets that can be saved and reloaded.</li><li><b>Stale results.</b> Changing the study setup clears every design, analysis and scenario that depends on it.</li><li><b>Seven designs, one interface.</b> Each design family shares the same setup, analysis and simulation flow.</li></ul></div></div><div class="row"><div class="key">Validation</div><div><p>An internal tool, validated for use by the biostatistics team that uses it.</p></div></div><div class="row"><div class="key">Outcomes</div><div><ul class="outc"><li><b>~2 days → ~1 hour</b> to compare designs across scenarios for a study (estimate; see <a href="../../#method">methodology</a>).</li><li><b>One validated tool</b> in place of per-design scripts, with user and technical guides inside the app.</li></ul></div></div>
+  </div></section>
+  <section aria-labelledby="dp-d-h"><div class="wrap">
+    <p class="eyebrow">What it does</p>
+    <h2 id="dp-d-h">One place to choose a design, defend it and run it.</h2>
+    <div class="row"><div class="key"><em>01</em> Set up</div><div><h3>Study setup</h3>
+      <p>Number of dose levels, dose values and units. Changing the setup resets any design, analysis and scenario
+      that depends on it, so stale results can't carry over.</p></div></div>
+    <div class="row"><div class="key"><em>02</em> Design</div><div><h3>Seven designs, side by side</h3>
+      <p>Single agent: 3+3, mTPI, mTPI-2 (Keyboard), BOIN and the Bayesian logistic regression model (BLRM).
+      Toxicity and efficacy together: joint modelling (JMTE). Two agents: a logistic combination model.
+      Any number of variants can be added, each with its own parameters, decision table and prior plots.</p></div></div>
+    <div class="row"><div class="key"><em>03</em> Simulate</div><div><h3>Operating characteristics</h3>
+      <p>Enter true toxicity scenarios and run thousands of trials per design: how often each dose is chosen, patients
+      and DLTs per dose, and the spread of sample sizes. Results export to a PDF report.</p></div></div>
+    <div class="row"><div class="key"><em>04</em> Analyse</div><div><h3>Live dose recommendation</h3>
+      <p>Enter each cohort's dose, patients and DLTs as the trial runs. DEEP returns the next dose with the evidence
+      behind it: the decision table, the updated dose-toxicity curve, and the probability that each dose is under,
+      on or over target.</p></div></div>
+    <div class="row"><div class="key"><em>05</em> Optimise</div><div><h3>Pick the winner</h3>
+      <p>For the randomised stage after escalation, a go/no-go and dose-selection rule between a low and a high dose,
+      with the decision threshold tuned for a chosen trade-off.</p></div></div>
+    <div class="row"><div class="key"><em>06</em> Trace</div><div><h3>Reproducible by default</h3>
+      <p>Seeds on every stochastic step, saved and reloadable parameter sets, and a session panel with R and package
+      versions, changelog and test evidence.</p></div></div>
+  </div></section>
+  
+  <section aria-labelledby="dp-s-h"><div class="wrap">
+    <p class="eyebrow">How it's built</p>
+    <h2 id="dp-s-h">Statistical models behind a point-and-click front end.</h2>
+    <div class="row"><div class="key">Application</div><p class="chips"><span>R</span><span>Shiny</span><span>modular tabs per design family</span></p></div>
+    <div class="row"><div class="key">Methods</div><p class="chips"><span>beta-binomial interval designs</span><span>isotonic regression</span><span>Bayesian logistic regression</span><span>latent probit joint model</span></p></div>
+    <div class="row"><div class="key">Computation</div><p class="chips"><span>JAGS (MCMC)</span><span>Gibbs sampling</span><span>seeded simulation</span></p></div>
+    <div class="row"><div class="key">Outputs</div><p class="chips"><span>PDF simulation reports</span><span>decision tables</span><span>saved parameter sets</span></p></div>
+    <div class="row"><div class="key">Docs</div><p>A user guide and a technical guide with the model for every design,
+      both inside the app.</p></div>
+  </div></section>
+  <nav class="wrap pager" aria-label="More case studies">
+    <a href="../patient-explorer/"><small>Previous</small>&larr; Patient Explorer</a>
+    <a href="../previewr/" style="text-align:right"><small>Next</small>PreviewR &rarr;</a>
+  </nav>
+</article>
+</main>
+<footer><div class="wrap"><p>© 2026 Babit Ranjan Pradhan · Walkthroughs use public CDISC pilot data (pharmaverseadam) · No client data</p></div></footer>
+<script src="../../assets/site.js" defer></script>
+<script>window.__TOURS={"dp":{"reset":[{"set":["#dp-tgt","0.25"]},{"click":".presets [data-p=\"0.05,0.12,0.25,0.40,0.55\"]"},{"tab":"[data-t=\"sel\"]"}],"steps":[{"t":"#dp-tgt","c":"Set the target toxicity: the DLT rate the trial is trying to find. 0.25 is a common choice."},{"t":".doses","c":"Set the true DLT probability of each dose. In this scenario, dose 3 sits on target."},{"t":"#dp-run","go":[{"click":"#dp-run"}],"c":"Run the simulation: thousands of virtual trials per design, reproducible from the seed."},{"t":"#dp-kpis","c":"How often each design finds the right dose, and what it costs in patients and DLTs."},{"t":"#dp-pane svg","pre":[{"tab":"[data-t=\"sel\"]"}],"c":"Share of trials that picked each dose as the MTD. The star marks the right dose."},{"t":"#dp-pane svg","pre":[{"tab":"[data-t=\"pts\"]"}],"c":"Patients treated at each dose: where each design spends its sample."},{"t":"#dp-pane table","pre":[{"tab":"[data-t=\"tab\"]"}],"c":"BOIN's decision table: escalate, de-escalate or eliminate, for any number of patients at a dose."},{"t":".presets [data-p^=\"0.45\"]","pre":[{"tab":"[data-t=\"sel\"]"}],"go":[{"click":".presets [data-p^=\"0.45\"]"}],"c":"Try a scenario where every dose is too toxic. A good design stops early instead of picking a dose."}]}};</script>
+
+<script>
+(function(){
+"use strict";var ROOT=document.getElementById("dp-root");
+var $=function(s,r){return (r||ROOT).querySelector(s)}, $$=function(s,r){return [].slice.call((r||ROOT).querySelectorAll(s))};
+var doseIn=$$(".doses input"), last=null, tab="sel";
+var C3="var(--ink-soft)", CB="var(--band)";
+
+function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);
+  t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function binom(r,n,p){var x=0;for(var i=0;i<n;i++)if(r()<p)x++;return x;}
+function lchoose(n,k){var s=0;for(var i=1;i<=k;i++)s+=Math.log(n-k+i)-Math.log(i);return s;}
+// P(p > phi) for p ~ Beta(1+x, 1+n-x): with integer shapes the CDF is a binomial tail
+function pOver(x,n,phi){var a=1+x,b=1+n-x,m=a+b-1,c=0;
+  for(var j=a;j<=m;j++)c+=Math.exp(lchoose(m,j)+j*Math.log(phi)+(m-j)*Math.log(1-phi));return 1-c;}
+function bounds(phi){var p1=0.6*phi,p2=1.4*phi;
+  return{e:Math.log((1-p1)/(1-phi))/Math.log(phi*(1-p1)/(p1*(1-phi))),
+         d:Math.log((1-phi)/(1-p2))/Math.log(p2*(1-phi)/(phi*(1-p2)))};}
+function pava(y,w){var v=[],ww=[],len=[];
+  for(var i=0;i<y.length;i++){v.push(y[i]);ww.push(w[i]);len.push(1);
+    while(v.length>1&&v[v.length-2]>v[v.length-1]){var a=v.pop(),wa=ww.pop(),la=len.pop();var k=v.length-1;
+      v[k]=(v[k]*ww[k]+a*wa)/(ww[k]+wa);ww[k]+=wa;len[k]+=la;}}
+  var out=[];v.forEach(function(x,i){for(var j=0;j<len[i];j++)out.push(x);});return out;}
+
+function boin(p,phi,nmax,r,B){
+  var K=p.length,n=new Array(K).fill(0),x=new Array(K).fill(0),elim=K,d=0,stop=false;
+  while(n.reduce(function(a,b){return a+b;},0)+3<=nmax){
+    var y=binom(r,3,p[d]);n[d]+=3;x[d]+=y;
+    if(n[d]>=3&&pOver(x[d],n[d],phi)>0.95){elim=Math.min(elim,d);if(d===0){stop=true;break;}d--;continue;}
+    var ph=x[d]/n[d];
+    if(ph<=B.e&&d<elim-1)d++;else if(ph>=B.d&&d>0)d--;}
+  if(stop)return{mtd:-1,n:n,x:x};
+  var idx=[],y2=[],w=[];for(var i=0;i<elim;i++)if(n[i]>0){idx.push(i);y2.push((x[i]+0.05)/(n[i]+0.1));w.push(1/((x[i]+0.05)*(n[i]-x[i]+0.05)/(Math.pow(n[i]+0.1,2)*(n[i]+1.1))));}
+  if(!idx.length)return{mtd:-1,n:n,x:x};
+  var f=pava(y2,w).map(function(v,i){return v+i*1e-10;}),best=0,bd=1e9;
+  f.forEach(function(v,i){var dd=Math.abs(v-phi);if(dd<bd-1e-12){bd=dd;best=i;}});
+  return{mtd:idx[best],n:n,x:x};}
+
+function three(p,r){var K=p.length,n=new Array(K).fill(0),x=new Array(K).fill(0),d=0;
+  while(true){var y=binom(r,3,p[d]);n[d]+=3;x[d]+=y;
+    if(n[d]===3){if(y===0){if(d===K-1)return{mtd:d,n:n,x:x};d++;continue;}if(y===1)continue;}
+    else if(x[d]<=1){if(d===K-1)return{mtd:d,n:n,x:x};d++;continue;}
+    // too toxic at d: confirm the dose below with six patients
+    var j=d-1;while(j>=0){if(n[j]>=6)return{mtd:x[j]<=1?j:j-1,n:n,x:x};
+      var z=binom(r,3,p[j]);n[j]+=3;x[j]+=z;if(x[j]<=1)return{mtd:j,n:n,x:x};j--;}
+    return{mtd:-1,n:n,x:x};}}
+
+function run(){
+  var p=doseIn.map(function(i){return parseFloat(i.value);}),err=$("#dp-err");
+  if(p.some(function(v){return!(v>0&&v<1);})){err.textContent="Each rate must be between 0 and 1.";return;}
+  for(var i=1;i<p.length;i++)if(p[i]<=p[i-1]){err.textContent="Rates must increase with dose.";return;}
+  err.textContent="";
+  var phi=parseFloat($("#dp-tgt").value),nmax=+$("#dp-nmax").value,ns=+$("#dp-nsim").value,seed=parseInt($("#dp-seed").value,10)||1;
+  var B=bounds(phi),K=p.length,res={};
+  [["t","3+3",function(r){return three(p,r);}],["b","BOIN",function(r){return boin(p,phi,nmax,r,B);}]].forEach(function(d){
+    var r=rng(seed),sel=new Array(K+1).fill(0),N=new Array(K).fill(0),X=new Array(K).fill(0),tn=0,tx=0;
+    for(var s=0;s<ns;s++){var o=d[2](r);sel[o.mtd<0?K:o.mtd]++;
+      o.n.forEach(function(v,i){N[i]+=v;tn+=v;});o.x.forEach(function(v,i){X[i]+=v;tx+=v;});}
+    res[d[0]]={name:d[1],sel:sel.map(function(v){return 100*v/ns;}),N:N.map(function(v){return v/ns;}),
+      X:X.map(function(v){return v/ns;}),mn:tn/ns,mx:tx/ns};});
+  var tru=0,bd=1e9;p.forEach(function(v,i){if(Math.abs(v-phi)<bd){bd=Math.abs(v-phi);tru=i;}});
+  if(p[0]>phi+0.1)tru=-1;
+  last={res:res,tru:tru,phi:phi,B:B,nmax:nmax,ns:ns};
+  kpis();draw();}
+
+function kpis(){var r=last.res,t=last.tru,h="";
+  ["t","b"].forEach(function(k){var d=r[k],ok=t<0?d.sel[5]:d.sel[t];
+    h+='<div class="'+(k==="b"?"ok":"")+'"><span class="lab">'+d.name+'</span><b>'+ok.toFixed(1)+'%</b><span>'+
+      (t<0?"correctly stopped":"chose D"+(t+1))+'</span></div>'+
+      '<div><span class="lab">'+d.name+'</span><b>'+d.mn.toFixed(1)+'</b><span>mean patients</span></div>'+
+      '<div><span class="lab">'+d.name+'</span><b>'+d.mx.toFixed(1)+'</b><span>mean DLTs</span></div>';});
+  $("#dp-kpis").innerHTML=h;}
+
+function bars(cats,series,unit,mark){
+  var W=640,H=260,L=44,R=10,T=14,Bm=36,pw=W-L-R,ph=H-T-Bm,mx=0;
+  series.forEach(function(s){s.v.forEach(function(v){mx=Math.max(mx,v);});});
+  mx=unit==="%"?Math.min(100,Math.ceil(mx/10)*10||10):Math.ceil(mx)||1;
+  var g=pw/cats.length,bw=Math.min(28,g*0.32),s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Grouped bar chart">';
+  for(var k=0;k<=4;k++){var y=T+ph-ph*k/4,val=mx*k/4;
+    s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y+'" y2="'+y+'" stroke="var(--rule)" stroke-width="1"/>'+
+      '<text x="'+(L-6)+'" y="'+(y+4)+'" text-anchor="end" font-size="10">'+(unit==="%"?Math.round(val)+"%":(+val.toFixed(1)))+'</text>';}
+  cats.forEach(function(c,i){var cx=L+g*i+g/2;
+    series.forEach(function(se,j){var v=se.v[i],bh=ph*v/mx,x=cx+(j-series.length/2)*bw+1;
+      s+='<rect x="'+x+'" y="'+(T+ph-bh)+'" width="'+(bw-2)+'" height="'+Math.max(bh,0)+'" fill="'+se.c+'" rx="2"><title>'+
+        se.n+' · '+c+': '+(unit==="%"?v.toFixed(1)+"%":v.toFixed(2))+'</title></rect>';
+      if(v>0&&bw>14)s+='<text x="'+(x+(bw-2)/2)+'" y="'+(T+ph-bh-4)+'" text-anchor="middle" font-size="9">'+(unit==="%"?Math.round(v):v.toFixed(1))+'</text>';});
+    s+='<text x="'+cx+'" y="'+(H-Bm+16)+'" text-anchor="middle" font-size="11"'+(mark===i?' fill="var(--band)" font-weight="500"':'')+'>'+c+(mark===i?' ★':'')+'</text>';});
+  s+='<text x="'+(L+pw/2)+'" y="'+(H-4)+'" text-anchor="middle" font-size="10">'+(mark!=null&&mark>=0?"★ correct dose":"")+'</text>';
+  return s+'</svg>';}
+
+function legend(){return '<div class="legend"><span><i style="background:'+C3+'"></i>3+3</span><span><i style="background:'+CB+'"></i>BOIN</span></div>';}
+
+function table(){var B=last?last.B:bounds(parseFloat($("#dp-tgt").value)),phi=last?last.phi:parseFloat($("#dp-tgt").value),
+  N=12,row=function(lbl,cls,f){var h='<tr><th scope="row">'+lbl+'</th>';for(var n=1;n<=N;n++)h+='<td class="'+cls+'">'+f(n)+'</td>';return h+'</tr>';};
+  var h='<p class="boundaries">Escalate if observed DLT rate &le; '+B.e.toFixed(3)+'. De-escalate if &ge; '+B.d.toFixed(3)+
+    '. Target '+phi.toFixed(2)+'.</p><div class="tbl-wrap"><table class="dt"><thead><tr><th scope="col">Patients at dose</th>';
+  for(var n=1;n<=N;n++)h+='<th scope="col">'+n+'</th>';h+='</tr></thead><tbody>';
+  h+=row("Escalate if DLTs ≤","e",function(n){return Math.floor(B.e*n+1e-9);});
+  h+=row("De-escalate if DLTs ≥","d",function(n){return Math.ceil(B.d*n-1e-9);});
+  h+=row("Eliminate if DLTs ≥","u",function(n){if(n<3)return"–";for(var x=0;x<=n;x++)if(pOver(x,n,phi)>0.95)return x;return"–";});
+  return h+'</tbody></table></div>';}
+
+function draw(){var pane=$("#dp-pane");
+  if(tab==="tab"){pane.innerHTML=table();return;}
+  if(!last){pane.innerHTML='<p class="note">Run a simulation to see results.</p>';return;}
+  var r=last.res,cats=["D1","D2","D3","D4","D5"],S=function(k){return[{n:"3+3",c:C3,v:r.t[k]},{n:"BOIN",c:CB,v:r.b[k]}];};
+  if(tab==="sel"){var c2=cats.concat(["None"]),m=last.tru<0?5:last.tru;
+    pane.innerHTML=legend()+'<div class="chart">'+bars(c2,S("sel"),"%",m)+'</div><p class="note">Share of '+last.ns+
+      ' simulated trials that picked each dose as the MTD. "None" means the trial stopped for toxicity.</p>';}
+  else if(tab==="pts")pane.innerHTML=legend()+'<div class="chart">'+bars(cats,S("N"),"n",last.tru)+'</div><p class="note">Mean patients treated at each dose per trial.</p>';
+  else pane.innerHTML=legend()+'<div class="chart">'+bars(cats,S("X"),"n",last.tru)+'</div><p class="note">Mean dose-limiting toxicities at each dose per trial.</p>';}
+
+$$(".tabs button").forEach(function(b){b.addEventListener("click",function(){
+  tab=b.dataset.t;$$(".tabs button").forEach(function(o){o.setAttribute("aria-selected",o===b);});
+  $("#dp-pane").setAttribute("aria-labelledby",b.id);draw();});});
+$$(".presets .btn").forEach(function(b){b.addEventListener("click",function(){
+  b.dataset.p.split(",").forEach(function(v,i){doseIn[i].value=v;});run();});});
+$("#dp-run").addEventListener("click",run);
+$("#dp-tgt").addEventListener("change",function(){if(tab==="tab"){last=null;draw();}});
+run();
+})();
+</script>
+
+</body>
+</html>
