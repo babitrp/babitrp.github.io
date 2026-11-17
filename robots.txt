@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://babitrp.github.io/sitemap.xml
