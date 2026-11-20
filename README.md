@@ -71,6 +71,7 @@ python -m http.server 8000
 - All walkthroughs use public CDISC pilot study data from the [pharmaverseadam](https://pharmaverse.github.io/pharmaverseadam/) R package. No client or patient data appears anywhere.
 - Client work is described by what it does, not by whose it is.
 - The Patient Safety Review screens come from the application running on public data. The other clinical walkthroughs are in-browser illustrations of each application, not the applications themselves.
+- The Analytics & Statistical Work charts are computed from pharmaverseadam ADSL, ADAE and ADLB (safety population). Intervals are unadjusted and the analyses are illustrations of method, not study conclusions.
 - Impact figures for the clinical applications are estimates, not measured results. The method is described on the home page.
 
 ## Contact
