@@ -32,7 +32,7 @@
 <nav class="nav" aria-label="Main">
   <div class="wrap">
     <a class="brand" href="./">Babit Ranjan Pradhan<span>.</span></a>
-    <ul id="navlist"><li><a href="#work">Projects</a></li><li><a href="#expertise">Expertise</a></li><li><a href="#engineering">Engineering</a></li><li><a href="#ai">AI / ML</a></li><li><a href="#impact">Impact</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul>
+    <ul id="navlist"><li><a href="#leadership">Leadership</a></li><li><a href="#work">Projects</a></li><li><a href="#impact">Impact</a></li><li><a href="#engineering">Engineering</a></li><li><a href="#ai">Applied AI</a></li><li><a href="#skills">Capabilities</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li></ul>
     <div class="nav-r">
       <a class="btn resume" href="resume.pdf" download>Resume</a>
       <button class="menu" id="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navlist">
@@ -50,292 +50,214 @@
 <div class="home">
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow">Babit Ranjan Pradhan · <b>Senior Analytics Consultant</b> · Bengaluru, India</p>
-    <h1>Pharmaceutical technology and data science: <em>clinical applications</em> that turn trial data into decisions.</h1>
-    <p class="intro">Nine years in analytics, five in clinical R&amp;D. I work where clinical domain knowledge, software engineering,
-      analytics and AI meet, and I build applications that hold up in validated environments.</p>
-    <ul class="pillars">
-      <li><b>Clinical analytics</b><span>Safety review, labs, adverse events, dose escalation</span></li>
-      <li><b>Data engineering</b><span>CDISC ADaM pipelines, QC, synthetic data</span></li>
-      <li><b>AI / ML</b><span>LLM features, RAG, local models, document intelligence</span></li>
-      <li><b>Application architecture</b><span>Modular, tested, audited, deployed</span></li>
-    </ul>
+    <p class="hname">Babit Ranjan Pradhan</p>
+    <p class="eyebrow">Senior Analytics Consultant · Pharmaceutical technology · Data science</p>
+    <h1>Clinical data. Software engineering. <em>AI.</em></h1>
+    <p class="intro">I build production-grade applications and analytical systems for clinical research and pharmaceutical
+      decision-making: nine years in analytics, five of them in clinical R&amp;D.</p>
     <div class="cta">
-      <a class="btn pri" href="#work">Featured projects</a>
-      <a class="btn" href="resume.pdf" download>Download resume (PDF)</a>
-      <a class="btn" href="mailto:pradhan.babit@gmail.com">Contact me</a>
+      <a class="btn pri" href="#work">View projects</a>
+      <a class="btn" href="resume.pdf" download>Resume (PDF)</a>
+      <button class="btn" type="button" data-copy="pradhan.babit@gmail.com" aria-live="polite">Copy email</button>
       <a class="lk" href="https://www.linkedin.com/in/babit-ranjan-pradhan/" target="_blank" rel="noopener">LinkedIn</a>
       <a class="lk" href="https://github.com/babitrp" target="_blank" rel="noopener">GitHub</a>
     </div>
-    <div class="facts">
-      <div><b>9 yrs</b><span>Analytics and data</span></div>
-      <div><b>5 yrs</b><span>Clinical R&amp;D applications</span></div>
-      <div><b>4</b><span>Featured clinical applications</span></div>
-      <div><b>GxP</b><span>Validated flagship application</span></div>
-    </div>
+    <ul class="signals" aria-label="Highlights">
+      <li><b>Team leadership</b><span>Lead a small development team; mentor and appraise</span></li>
+      <li><b>Application architecture</b><span>Modular, tested, audited clinical apps</span></li>
+      <li><b>End-to-end ownership</b><span>Requirements to release, CI/CD included</span></li>
+      <li><b>GxP-validated application</b><span>Wrote the validation evidence</span></li>
+      <li><b>AI in clinical workflows</b><span>Metadata-grounded LLMs, RAG, local models</span></li>
+    </ul>
   </div>
 </header>
 
-<section id="summary" aria-labelledby="sum-h">
-  <div class="wrap rv summary">
-    <div>
-      <p class="eyebrow">Professional summary</p>
-      <h2 id="sum-h">Clinical domain, engineering depth, measurable outcomes.</h2>
-    </div>
-    <div class="sumtext">
-      <p>I design and ship production applications on CDISC ADaM data for pharma R&amp;D: patient safety review, toxicity and
-        laboratory monitoring, dose-escalation trial design, and dataset and document QC. The flagship, Patient Safety Review, is
-        GxP-validated: I designed its CI/CD and change control and wrote its validation evidence. The internal utilities are
-        validated by the biostatistics teams that use them.</p>
-      <p>I lead a small team on the patient safety review platform and the document comparison tool, and built the dose-escalation platform and the dataset comparison tool on my own. I set the team's review
-        standards, mentor and appraise a direct report, and own delivery from requirements with client stakeholders to release.</p>
-      <p>I bring AI into clinical workflows where it is safe to: language-model features that see schema and retrieved documents
-        rather than patient values, local models under tight infrastructure limits, and AI-assisted analytics.</p>
+<section id="leadership" aria-labelledby="lead-h">
+  <div class="wrap">
+    <p class="eyebrow">Leadership &amp; ownership</p>
+    <h2 id="lead-h">More than hands-on development.</h2>
+    <p class="lede">I lead a small team on two clinical applications and built two more on my own, owning each from requirements
+      with client stakeholders through architecture, delivery, validation and release.</p>
+    <div class="lcards">
+      <div><span class="ak">Architecture</span><h3>Decisions that hold up in audit</h3><p>Append-only audit store with hashed identifiers,
+        background workers with caching, session-scoped state, and a three-layer test strategy.</p></div>
+      <div><span class="ak">Quality standards</span><h3>The bar for merging</h3><p>Unit, integration and end-to-end tests, lint and security
+        scans passing, a change-request reference and an independent review before merge.</p></div>
+      <div><span class="ak">Team</span><h3>Mentoring and appraisals</h3><p>Mentor my direct report on Shiny modules and testing; set
+        goals and run performance appraisals.</p></div>
+      <div><span class="ak">Delivery</span><h3>CI/CD and validation</h3><p>Designed the flagship's CI/CD and change control and wrote
+        its validation evidence.</p></div>
+      <div><span class="ak">Stakeholders</span><h3>Scope and value</h3><p>Demo applications to client stakeholders; pushed back on a
+        feature that added validation risk and agreed a safer, staged scope.</p></div>
     </div>
   </div>
 </section>
 
 <section id="work" aria-labelledby="work-h">
-  <div class="wrap rv">
-    <p class="eyebrow">Featured pharma projects</p>
+  <div class="wrap">
+    <p class="eyebrow">Featured projects</p>
     <h2 id="work-h">Four clinical applications, each with a walkthrough you can click.</h2>
-    <p class="lede">Client work is private, so each project is described by what it does, not whose it is. Every walkthrough runs on
-      public data; each case study covers the problem, my role, the architecture, the challenges and the outcomes.</p>
+    <p class="lede">Client work is private, so each project is described by what it does, not whose it is. Walkthroughs run on public data.</p>
     <div class="grid"><article class="card wide">
-  <div class="th"><img loading="lazy" src="assets/img/thumb-safety-review.webp" alt="Patient Safety Review study view with disposition and adverse event summaries by arm." decoding="async"></div>
-  <div class="bd"><span class="cat">Featured · Patient safety · <b>12-step walkthrough</b></span><h3><a href="work/safety-review/">Patient Safety Review</a></h3><p>Patient-level safety review for clinical trials. Labs, adverse events, medications and exposure on one timeline, a study view where every number opens the patients behind it, plain-language Smart Filters, and an audit trail built for a regulated setting. Toxicity grading, PCSA flagging and lab monitoring run on configurable rules.</p>
-    <p class="tech">R · Shiny modules · plotly · reactable · ADaM · Posit Connect</p><span class="go">Open case study &rarr;</span></div>
+  <div class="th"><img loading="lazy" src="assets/img/thumb-safety-review.webp" alt="Patient safety review study view with disposition and adverse event summaries by arm." decoding="async"><span class="kind">Production · GxP-validated</span></div>
+  <div class="bd"><span class="cat">Patient safety · <b>12-step walkthrough</b></span><h3><a href="work/safety-review/">Patient Safety Review</a></h3><p>Patient-level safety review on one timeline, with a study view where every number opens the patients behind it and an audit trail built for a regulated setting.</p>
+    <p class="ba"><span>Before</span>Separate listings, one request each<span>After</span>One timeline, ready to review</p><p class="tech">Lead developer · R Shiny · plotly · ADaM · Posit Connect</p><span class="go">Open case study &rarr;</span></div>
 </article>
 <article class="card">
-  <div class="th"><img loading="lazy" src="assets/img/thumb-dose-escalation.webp" alt="Dose-escalation demo chart comparing how often 3+3 and BOIN pick each dose." decoding="async"></div>
-  <div class="bd"><span class="cat">Trial design · <b>Live simulator</b></span><h3><a href="work/dose-escalation/">Dose-escalation design platform</a></h3><p>Plan and run Phase I dose-escalation trials. Seven designs, from 3+3 and BOIN to Bayesian models, compared by simulation and used for live dose recommendations.</p>
-    <p class="tech">R · Shiny · JAGS / MCMC</p><span class="go">Open case study &rarr;</span></div>
+  <div class="th"><img loading="lazy" src="assets/img/thumb-dose-escalation.webp" alt="Dose-escalation simulator comparing how often 3+3 and BOIN pick each dose." decoding="async"><span class="kind">Internal tool</span></div>
+  <div class="bd"><span class="cat">Trial design · <b>Live simulator</b></span><h3><a href="work/dose-escalation/">Dose-escalation design platform</a></h3><p>Seven Phase I designs compared by simulation before a study, then used for live dose recommendations.</p>
+    <p class="ba"><span>Before</span>A script per design<span>After</span>One interactive platform</p><p class="tech">Sole developer · R Shiny · JAGS</p><span class="go">Open case study &rarr;</span></div>
 </article>
 <article class="card">
-  <div class="th"><img loading="lazy" src="assets/img/thumb-document-comparison.webp" alt="Document Comparison demo comparing two versions of a demographics table." decoding="async"></div>
-  <div class="bd"><span class="cat">Clinical reporting QC · <b>Live demo</b></span><h3><a href="work/document-comparison/">Document Comparison</a></h3><p>Preview DOCX, DOC, TXT and PDF in the browser and compare two versions: word-level text, cell-by-cell tables and pixel-level figures, exported as a QC report.</p>
-    <p class="tech">R · Shiny · document diff</p><span class="go">Open case study &rarr;</span></div>
+  <div class="th"><img loading="lazy" src="assets/img/thumb-document-comparison.webp" alt="Document comparison of two versions of a demographics table." decoding="async"><span class="kind">Internal tool</span></div>
+  <div class="bd"><span class="cat">Reporting QC · <b>Live demo</b></span><h3><a href="work/document-comparison/">Document Comparison</a></h3><p>Two versions of an output, Word or PDF, compared word by word, cell by cell and pixel by pixel.</p>
+    <p class="ba"><span>Before</span>Two printouts, by eye<span>After</span>Every change highlighted</p><p class="tech">Lead developer · R Shiny</p><span class="go">Open case study &rarr;</span></div>
 </article>
 <article class="card">
-  <div class="th"><img loading="lazy" src="assets/img/thumb-dataset-comparison.webp" alt="Dataset Comparison demo listing changed records between two ADSL cuts." decoding="async"></div>
-  <div class="bd"><span class="cat">Clinical data QC · <b>Live demo</b></span><h3><a href="work/dataset-comparison/">Dataset Comparison</a></h3><p>Two versions of a clinical dataset in, one answer to “what changed?” out: records matched on keys, values old against new, attributes compared.</p>
-    <p class="tech">R · Shiny · SAS · XPT · ADaM</p><span class="go">Open case study &rarr;</span></div>
+  <div class="th"><img loading="lazy" src="assets/img/thumb-dataset-comparison.webp" alt="Dataset comparison listing changed records between two ADSL cuts." decoding="async"><span class="kind">Internal tool</span></div>
+  <div class="bd"><span class="cat">Data QC · <b>Live demo</b></span><h3><a href="work/dataset-comparison/">Dataset Comparison</a></h3><p>Two cuts of a dataset matched on keys: added, removed and changed records, plus label and length differences.</p>
+    <p class="ba"><span>Before</span>One-off compare code<span>After</span>Pick keys, review</p><p class="tech">Sole developer · R Shiny · SAS · XPT</p><span class="go">Open case study &rarr;</span></div>
 </article></div>
-
     <h3 class="subh" id="more">More work</h3>
-    <div class="more">
-      <div class="mgroup"><h4>AI / ML</h4>
-        <div class="mi"><b>Self-hosted inference under a memory ceiling</b><p>Quantized GGUF models behind a plumber endpoint, bridged
-          through reticulate, running inside enterprise infrastructure with a hard RAM cap.</p><p class="t">llama.cpp · GGUF · plumber · reticulate</p></div>
-        <div class="mi"><b>Clinical plot extraction</b><p>Reading data back out of published clinical figures: forest plots,
-          Kaplan-Meier curves and treatment comparisons.</p><p class="t">Python · OCR · computer vision</p></div>
-        <div class="mi"><b>Predictive models for demand and behaviour</b><p>Buying behaviour and sales patterns feeding manufacturing
-          and stock decisions; 20% efficiency gain downstream.</p><p class="t">Python · R · scikit-learn</p></div>
-      </div>
-      <div class="mgroup"><h4>Data engineering</h4>
-        <div class="mi"><b><a href="work/synthetic-adam/">Synthetic ADaM generator</a></b><p>Linked ADSL and ADAE with the statistical
-          shape of a real study, checked for linkage, keys and timing on every run.</p><p class="t">R · pharmaverse · haven · <a href="work/synthetic-adam/">live demo</a></p></div>
-        <div class="mi"><b><a href="work/header-tables/">Header-statistics tables</a></b><p>Tables that carry histograms and summary
-          statistics in their headers, recomputed as you filter.</p><p class="t">reactable · cards / ARD · <a href="work/header-tables/">live demo</a></p></div>
-        <div class="mi"><b>Automated processing pipelines</b><p>Pre- and post-processing automation that cut processing time by 75%.</p>
-          <p class="t">Python · SQL · PostgreSQL</p></div>
-      </div>
-      <div class="mgroup"><h4>Personal projects</h4>
-        <a class="pmini" href="work/purvadrishti/"><img loading="lazy" src="assets/img/thumb-purvadrishti.webp" alt="Purvadrishti research workspace with nine AI agents in a pixel-art office." decoding="async">
-          <b>Purvadrishti</b><span>Multi-agent AI research for Indian equities: nine research desks, a rules engine, and backtests
-          net of Indian trading costs.</span><em>8-step walkthrough &rarr;</em></a>
-        <p class="t"><a href="https://babitrp.github.io/nivesh-demo/" target="_blank" rel="noopener">Live demo</a> · <a href="https://github.com/babitrp/nivesh-demo" target="_blank" rel="noopener">GitHub</a></p>
-      </div>
+    <div class="mlist">
+      <a class="mrow" href="work/purvadrishti/"><img loading="lazy" loading="lazy" src="assets/img/thumb-purvadrishti.webp" alt="" decoding="async">
+        <span><b>Purvadrishti</b><em class="kind2">Personal project</em><small>Multi-agent AI research for Indian equities, with cost-aware backtests.</small></span><i>&rarr;</i></a>
+      <a class="mrow" href="work/synthetic-adam/"><img loading="lazy" loading="lazy" src="assets/img/thumb-synthetic-adam.webp" alt="" decoding="async">
+        <span><b>Synthetic ADaM generator</b><em class="kind2">Public demonstration</em><small>Linked ADSL and ADAE that pass cross-domain checks.</small></span><i>&rarr;</i></a>
+      <a class="mrow" href="work/header-tables/"><img loading="lazy" loading="lazy" src="assets/img/thumb-header-tables.webp" alt="" decoding="async">
+        <span><b>Header-statistics tables</b><em class="kind2">Public demonstration</em><small>Summary statistics inside column headers, recomputed as you filter.</small></span><i>&rarr;</i></a>
     </div>
+    <p class="also2"><b>Also built:</b> self-hosted LLM inference under a memory ceiling · data extraction from published clinical
+      figures · processing pipelines that cut processing time by 75% · demand and behaviour models.</p>
   </div>
 </section>
 
-<section id="expertise" aria-labelledby="dom-h">
-  <div class="wrap rv">
-    <p class="eyebrow">Pharma domain expertise</p>
-    <h2 id="dom-h">The clinical context behind the code.</h2>
-    <div class="dgrid2">
-      <div><h3>CDISC ADaM &amp; SDTM</h3><p>ADSL, ADAE, ADLB, ADVS, ADCM, ADEX, ADMH; variable conventions, derivations, population flags and traceability.</p></div>
-      <div><h3>Clinical trial analytics</h3><p>Study-level summaries by arm and population, disposition, exposure, and active-versus-reference comparisons.</p></div>
-      <div><h3>Patient safety review</h3><p>Patient profiles on one timeline, review status, comments and audit trails for safety reviewers.</p></div>
-      <div><h3>Adverse events</h3><p>TEAE flags, MedDRA system organ class and preferred term, severity and seriousness, time to onset, signal detection.</p></div>
-      <div><h3>Laboratory data</h3><p>Reference ranges, PCSA criteria, CTCAE-style toxicity grading, change from baseline, eDISH and Hy's law.</p></div>
-      <div><h3>Dose escalation</h3><p>3+3, mTPI, mTPI-2, BOIN, BLRM and two-agent combination designs; operating characteristics; MTD selection.</p></div>
-      <div><h3>Clinical reporting &amp; QC</h3><p>Table, listing and figure comparison across versions, data-cut differences, metadata and attribute checks.</p></div>
-      <div><h3>Regulated delivery</h3><p>GxP practice for a validated application: change control, audit trail, validation evidence and package risk assessment.</p></div>
+<section id="impact" aria-labelledby="impact-h">
+  <div class="wrap">
+    <p class="eyebrow">Impact</p>
+    <h2 id="impact-h">Time given back to clinical teams.</h2>
+    <div class="icards big4">
+      <div><b>50–75%</b><span>Estimated review-time reduction</span><small><a href="work/safety-review/">Patient safety review</a></small></div>
+      <div><b>~15 hours</b><span>Saved per study</span><small><a href="work/dose-escalation/">Dose-escalation design</a></small></div>
+      <div><b>~28 min</b><span>Saved per document pair</span><small><a href="work/document-comparison/">Document comparison</a></small></div>
+      <div><b>~55 min</b><span>Saved per dataset pair</span><small><a href="work/dataset-comparison/">Dataset comparison</a></small></div>
+    </div>
+    <p class="disc">These are my estimates for one person doing one typical task, compared with the manual process. They are not
+      timed studies or independently measured results.</p>
+    <details class="method" id="method">
+      <summary>How these estimates were made</summary>
+      <dl>
+        <div><dt>Patient safety review</dt><dd><b>Baseline:</b> assembling one patient's labs, adverse events, medications and exposure
+          from separate listings and lining up dates by hand. <b>Scenario:</b> one patient, four or five domains; the range reflects
+          patient complexity.</dd></div>
+        <div><dt>Dose-escalation design</dt><dd><b>Baseline:</b> scripting simulations for each candidate design and scenario and
+          collating the results (~2 days). <b>Scenario:</b> a few designs across a few toxicity scenarios for one study (~1 hour).</dd></div>
+        <div><dt>Document comparison</dt><dd><b>Baseline:</b> reading two versions of one table or listing side by side, or in Adobe
+          Acrobat Pro (~30 min). <b>Scenario:</b> one output of a few pages (~2 min); no Acrobat Pro licence needed.</dd></div>
+        <div><dt>Dataset comparison</dt><dd><b>Baseline:</b> writing and running comparison code for one dataset pair and reading the
+          output (~60 min). <b>Scenario:</b> one ADaM dataset across two data cuts (~5 min).</dd></div>
+      </dl>
+      <p>Setup, fixing the issues found and sign-off are excluded.</p>
+    </details>
+    <h3 class="subh">Earlier roles · outcomes reported in those roles</h3>
+    <div class="estats">
+      <div><b>−75%</b><span>Processing time, via pipeline automation</span><small>Kantar</small></div>
+      <div><b>+40%</b><span>Project efficiency, via reusable ML assets</span><small>Kantar</small></div>
+      <div><b>−25%</b><span>Project timelines, via workflow standards</span><small>Kantar</small></div>
+      <div><b>+20%</b><span>Manufacturing efficiency, via predictive models</span><small>Quantzig</small></div>
+      <div><b>+25%</b><span>Sales, via pricing and advertising strategy</span><small>Growth Hack Solutions</small></div>
     </div>
   </div>
 </section>
 
 <section id="engineering" aria-labelledby="eng-h">
-  <div class="wrap rv">
-    <p class="eyebrow">Architecture &amp; engineering</p>
-    <h2 id="eng-h">How the applications are built, not just what they do.</h2>
-    <p class="lede">The reference shape behind the clinical applications, with the decisions that make them hold up in production.</p>
-    <ol class="flow"><li><b>Sources</b><span>SAS · XPT · Parquet uploads · data-lake access by token</span></li><li><b>Ingestion</b><span>domain detection · harmonisation · sanity checks</span></li><li><b>Application</b><span>Shiny modules · central reactive state · session isolation</span></li><li><b>Services</b><span>async workers · R and Python APIs · LLM services</span></li><li><b>Persistence</b><span>append-only audit store · SQLite · PostgreSQL</span></li><li><b>Delivery</b><span>CI/CD · DEV → UAT → PROD · Posit Connect</span></li></ol>
-    <div class="egrid">
-      <div><h3>R Shiny modules</h3><p>Feature modules with explicit inputs and returned reactives; cross-module state held centrally and passed down, never reached for globally.</p></div>
-      <div><h3>Python &amp; APIs</h3><p>plumber endpoints and Python services bridged through reticulate; Python pipelines for data processing.</p></div>
-      <div><h3>Database integration</h3><p>Backend-agnostic persistence over SQLite and PostgreSQL with parameterised queries and environment-separated tables.</p></div>
-      <div><h3>Asynchronous processing</h3><p>Background workers (mirai, ExtendedTask) for simulations and heavy derivations, so interfaces stay responsive.</p></div>
-      <div><h3>Caching</h3><p>Plot and computation caching on stable keys, so repeated views are instant without serving stale results.</p></div>
-      <div><h3>Deployment architecture</h3><p>DEV, UAT and PROD on Posit Connect, pinned dependencies with renv, and dual approval to release, a pipeline I designed.</p></div>
-      <div><h3>Testing &amp; quality</h3><p>Unit, integration and end-to-end tests (testthat, testServer, shinytest2), coverage checks, linting and simulated-user runs.</p></div>
-      <div><h3>Security &amp; compliance</h3><p>Hashed identifiers, sanitised errors, automated security scans in CI, and an audit trail built to support 21 CFR Part 11 requirements.</p></div>
-    </div>
+  <div class="wrap">
+    <p class="eyebrow">How I build</p>
+    <h2 id="eng-h">The shape behind the clinical applications.</h2>
+    <ol class="flow"><li><b>Sources</b><span>SAS · XPT · Parquet · data-lake access</span></li><li><b>Ingestion</b><span>domain detection · sanity checks</span></li><li><b>Application</b><span>Shiny modules · session isolation</span></li><li><b>Services</b><span>async workers · R and Python APIs · LLM services</span></li><li><b>Record</b><span>append-only audit store</span></li><li><b>Delivery</b><span>CI/CD · DEV → UAT → PROD</span></li></ol>
+    <p class="note">Each case study shows the architecture of that application, with the decisions and trade-offs behind it.</p>
   </div>
 </section>
 
 <section id="ai" aria-labelledby="ai-h">
-  <div class="wrap rv">
-    <p class="eyebrow">AI / ML &amp; innovation</p>
-    <h2 id="ai-h">AI where it is safe and useful in clinical work.</h2>
+  <div class="wrap">
+    <p class="eyebrow">Applied AI</p>
+    <h2 id="ai-h">Applied AI for real healthcare workflows, not experiments.</h2>
+    <p class="lede">The point is knowing where AI belongs in a clinical setting, and where it doesn't.</p>
     <div class="agrid">
-      <div><span class="ak">In production</span><h3>LLM features inside clinical apps</h3><p>Plain-language Smart Filters in
-        <a href="work/safety-review/">Patient Safety Review</a>: the model sees schema and metadata only, never patient values, and
-        every generated filter is validated before it runs. LLM-drafted clinical narratives in the patient profile.</p></div>
-      <div><span class="ak">Clinical work</span><h3>Retrieval-augmented generation</h3><p>RAG pipelines that ground model answers in
-        retrieved clinical documents and metadata rather than model memory.</p></div>
-      <div><span class="ak">Infrastructure</span><h3>Local LLM deployment</h3><p>Quantized open models served inside enterprise
-        infrastructure with a hard memory ceiling, so data never leaves the environment.</p></div>
-      <div><span class="ak">Document intelligence</span><h3>Reading clinical documents</h3><p>Document comparison in
-        <a href="work/document-comparison/">Document Comparison</a>, and extraction of data from published clinical figures with OCR and computer vision.</p></div>
-      <div><span class="ak">Proposed proofs of concept</span><h3>AI-assisted analytics</h3><p>AI-assisted SDTM-to-ADaM derivation,
-        piloting ADSL and ADAE, and AI-based anomaly detection on clinical data.</p></div>
-      <div><span class="ak">Personal project</span><h3>Multi-agent research</h3><p><a href="work/purvadrishti/">Purvadrishti</a>: nine
-        agents, swappable Claude and Gemini back ends, and a rules engine that keeps the numbers computed, not generated.</p></div>
+      <div><span class="ak">In production</span><h3>Metadata-grounded LLM features</h3><p>Plain-language filters where the model sees schema
+        and metadata only, never patient values, and every generated filter is validated before it runs.</p></div>
+      <div><span class="ak">Clinical work</span><h3>Retrieval-augmented generation</h3><p>Answers grounded in retrieved clinical
+        documents and metadata rather than model memory.</p></div>
+      <div><span class="ak">Infrastructure</span><h3>Local inference</h3><p>Quantized GGUF models on llama.cpp inside enterprise
+        infrastructure with a hard memory ceiling, so data never leaves.</p></div>
+      <div><span class="ak">Document intelligence</span><h3>Reading clinical documents</h3><p>Cross-format document comparison, and
+        data extraction from published clinical figures with OCR and computer vision.</p></div>
     </div>
-  </div>
-</section>
-
-<section id="impact" aria-labelledby="impact-h">
-  <div class="wrap rv">
-    <p class="eyebrow">Impact &amp; achievements</p>
-    <h2 id="impact-h">Baseline, result and time saved.</h2>
-    <h3 class="igroup">Clinical applications <span>Estimates, not measured results · <a href="#method">methodology</a></span></h3>
-    <div class="itable" role="table" aria-label="Clinical application impact">
-      <div class="ir ih" role="row"><span role="columnheader">Application</span><span role="columnheader">Before</span><span role="columnheader">After</span><span role="columnheader">Saved</span></div>
-      <div class="ir" role="row"><span role="cell"><a href="work/safety-review/">Patient Safety Review</a><small>Patient-level safety review</small></span>
-        <span role="cell">Separate listings, one programming request each</span><span role="cell">One timeline, ready to review</span><span role="cell"><b>50–75%</b> of review time</span></div>
-      <div class="ir" role="row"><span role="cell"><a href="work/dose-escalation/">Dose-escalation platform</a><small>Comparing designs for a study</small></span>
-        <span role="cell">~2 days of scripting</span><span role="cell">~1 hour, interactive</span><span role="cell"><b>~15 hours</b> per study</span></div>
-      <div class="ir" role="row"><span role="cell"><a href="work/document-comparison/">Document Comparison</a><small>QC of two document versions</small></span>
-        <span role="cell">~30 min by hand, Acrobat Pro</span><span role="cell">~2 min, no licence</span><span role="cell"><b>~28 min</b> per pair</span></div>
-      <div class="ir" role="row"><span role="cell"><a href="work/dataset-comparison/">Dataset Comparison</a><small>Checking a data refresh</small></span>
-        <span role="cell">~60 min of compare code</span><span role="cell">~5 min, no code</span><span role="cell"><b>~55 min</b> per pair</span></div>
-    </div>
-    <div class="method" id="method">
-      <h4>How these estimates were made</h4>
-      <p>These are my estimates from building and supporting the applications, comparing the manual process with the app for one
-        person doing one typical task. They are not timed studies or independently measured results. Setup, fixing the issues found
-        and sign-off are excluded.</p>
-      <dl>
-        <div><dt>Patient Safety Review</dt><dd><b>Baseline:</b> assembling one patient's labs, adverse events, medications and exposure from
-          separate listings and lining up dates by hand. <b>Scenario:</b> one patient, four or five domains. The range reflects how
-          complex the patient is.</dd></div>
-        <div><dt>Dose-escalation platform</dt><dd><b>Baseline:</b> scripting simulations for each candidate design and scenario and collating the results.
-          <b>Scenario:</b> a few designs across a few toxicity scenarios for one study.</dd></div>
-        <div><dt>Document Comparison</dt><dd><b>Baseline:</b> reading two versions of one table or listing side by side, or in Adobe Acrobat Pro,
-          and noting each change. <b>Scenario:</b> one output of a few pages.</dd></div>
-        <div><dt>Dataset Comparison</dt><dd><b>Baseline:</b> writing and running comparison code for one dataset pair and reading the output.
-          <b>Scenario:</b> one ADaM dataset across two data cuts.</dd></div>
-      </dl>
-    </div>
-    <h3 class="igroup">Earlier roles <span>Outcomes reported in those roles</span></h3>
-    <div class="metric" style="--v:.20"><div class="metric-top"><div class="metric-what"><span class="metric-org">Quantzig</span>
-      Predictive models for buying behaviour and sales patterns <span class="mono">&rarr;</span> manufacturing efficiency and stock management</div>
-      <div class="metric-val">+20%</div></div><div class="mbar"><i></i></div></div>
-    <div class="metric" style="--v:.75"><div class="metric-top"><div class="metric-what"><span class="metric-org">Kantar</span>
-      Python automation of pre- and post-processing pipelines <span class="mono">&rarr;</span> processing time</div>
-      <div class="metric-val">&minus;75%</div></div><div class="mbar"><i></i></div></div>
-    <div class="metric" style="--v:.40"><div class="metric-top"><div class="metric-what"><span class="metric-org">Kantar</span>
-      Reusable ML and knowledge-based assets <span class="mono">&rarr;</span> project efficiency</div>
-      <div class="metric-val">+40%</div></div><div class="mbar"><i></i></div></div>
-    <div class="metric" style="--v:.25"><div class="metric-top"><div class="metric-what"><span class="metric-org">Kantar</span>
-      Workflow and documentation standards <span class="mono">&rarr;</span> project timelines</div>
-      <div class="metric-val">&minus;25%</div></div><div class="mbar"><i></i></div></div>
-    <div class="metric" style="--v:.25"><div class="metric-top"><div class="metric-what"><span class="metric-org">Growth Hack Solutions</span>
-      Client pricing and advertisement strategy <span class="mono">&rarr;</span> sales</div>
-      <div class="metric-val">+25%</div></div><div class="mbar"><i></i></div></div>
-  </div>
-</section>
-
-<section id="experience" aria-labelledby="exp-h">
-  <div class="wrap rv">
-    <p class="eyebrow">Experience &amp; leadership</p>
-    <h2 id="exp-h">Experience</h2>
-    <div class="lead">
-      <div class="row"><div class="key">Architecture decisions</div><div><p>On the patient safety review platform I chose an append-only audit store with
-        hashed identifiers and data-version signatures, background workers with plot caching, session-scoped state, and a three-layer
-        test strategy. Each case study lists the trade-offs.</p></div></div>
-      <div class="row"><div class="key">Review standards</div><div><p>I set the bar for merging: tests at unit, integration and
-        end-to-end level, lint and security scans passing, a change-request reference, and an independent review before merge.</p></div></div>
-      <div class="row"><div class="key">Mentoring</div><div><p>I mentor my direct report on Shiny modules and testing, and run their
-        goals and performance appraisals.</p></div></div>
-      <div class="row"><div class="key">Delivery ownership</div><div><p>Lead developer of a small team on the patient safety review platform and the document comparison tool;
-        sole developer of the dose-escalation platform and the dataset comparison tool. I designed the safety review platform's CI/CD and change control and wrote its validation
-        evidence.</p></div></div>
-      <div class="row"><div class="key">Stakeholders</div><div><p>I demo the applications and walk client stakeholders through their
-        business value. When a client feature request added validation risk, I pushed back and agreed a safer, staged scope.</p></div></div>
-    </div>
-    <h3 class="subh">Roles</h3>
-    <div class="row"><div class="key"><em>2022 — Present</em></div>
-      <div><div class="titles">Quantzig<span>Senior Analytics Consultant, 2025– · Analytics Consultant, 2022–2024 · Bengaluru</span></div>
-        <p>Architect and build production R Shiny for clinical trial data review: patient profile review, toxicity rules and lab
-          monitoring on ADaM datasets, a dose-escalation trial design platform, and dataset and document comparison utilities.
-          Before the clinical work: executive dashboards and KPI systems,
-          predictive modelling, and analysis presented directly to C-level stakeholders.</p></div></div>
-    <div class="row"><div class="key">2020 — 2022</div>
-      <div><div class="titles">Kantar<span>Consultant, Data Strategy &amp; Engineering · Senior Analyst, Data Strategy &amp; Democratization</span></div>
-        <p>Automation pipelines, reusable ML and knowledge assets, and process optimisation across project delivery.</p></div></div>
-    <div class="row"><div class="key">2019</div>
-      <div><div class="titles">Analytics Quotient<span>Business Analyst · Bengaluru</span></div></div></div>
-    <div class="row"><div class="key">2017 — 2019</div>
-      <div><div class="titles">Growth Hack Solutions<span>Business Analyst · Hyderabad</span></div>
-        <p>Built a data warehouse for business-critical reporting. Hypothesis testing to validate interpretations before they
-          reached strategy decisions.</p></div></div>
   </div>
 </section>
 
 <section id="skills" aria-labelledby="skills-h">
-  <div class="wrap rv">
-    <p class="eyebrow">Technical skills</p>
-    <h2 id="skills-h">Technical skills</h2>
-    <div class="row"><div class="key">Pharma</div><p class="chips"><span>CDISC ADaM</span><span>SDTM</span><span>pharmaverse</span><span>MedDRA</span><span>PCSA</span><span>CTCAE grading</span><span>GxP</span><span>21 CFR Part 11</span></p></div>
-    <div class="row"><div class="key">Programming</div><p class="chips"><span>R</span><span>Python</span><span>SQL</span><span>JavaScript</span></p></div>
-    <div class="row"><div class="key">Application dev</div><p class="chips"><span>Shiny</span><span>Shiny modules</span><span>bslib</span><span>reactable</span><span>plotly</span><span>gt</span><span>htmlwidgets</span><span>plumber</span></p></div>
-    <div class="row"><div class="key">AI / ML</div><p class="chips"><span>LLM integration</span><span>RAG</span><span>llama.cpp</span><span>GGUF</span><span>scikit-learn</span><span>OCR</span><span>computer vision</span></p></div>
-    <div class="row"><div class="key">Data engineering</div><p class="chips"><span>PostgreSQL</span><span>SQLite</span><span>haven</span><span>Parquet</span><span>ETL pipelines</span><span>data validation</span></p></div>
-    <div class="row"><div class="key">Statistics</div><p class="chips"><span>Bayesian methods</span><span>MCMC (JAGS)</span><span>dose-finding designs</span><span>hypothesis testing</span><span>predictive modelling</span><span>cards / ARD</span></p></div>
-    <div class="row"><div class="key">Deployment</div><p class="chips"><span>Posit Connect</span><span>Docker</span><span>Kubeflow</span><span>renv</span><span>CI/CD</span><span>mirai</span><span>ExtendedTask</span></p></div>
-    <div class="row"><div class="key">Quality</div><p class="chips"><span>testthat</span><span>shinytest2</span><span>covr</span><span>lintr</span></p></div>
+  <div class="wrap">
+    <p class="eyebrow">Capabilities</p>
+    <h2 id="skills-h">Grouped by the systems I build.</h2>
+    <div class="caps">
+      <div><h3>Clinical &amp; pharma data</h3><p>CDISC · ADaM · SDTM · MedDRA · PCSA and toxicity grading · GxP · Clinical trial analytics</p></div>
+      <div><h3>Application engineering</h3><p>R Shiny · Modular architecture · APIs · Python services · Reactive applications · Testing</p></div>
+      <div><h3>Data &amp; analytics</h3><p>R · Python · SQL · Statistical modelling · Bayesian methods (MCMC, JAGS) · Dose-finding designs · Predictive analytics</p></div>
+      <div><h3>AI &amp; intelligent applications</h3><p>LLMs · RAG · Local inference · llama.cpp · OCR · Computer vision</p></div>
+      <div><h3>Infrastructure &amp; delivery</h3><p>Posit Connect · CI/CD · PostgreSQL · SQLite · renv · Docker · Async processing</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" aria-labelledby="exp-h">
+  <div class="wrap">
+    <p class="eyebrow">Experience</p>
+    <h2 id="exp-h">Experience</h2>
+    <div class="row"><div class="key"><em>2022 – Present</em></div>
+      <div><div class="titles">Quantzig<span>Senior Analytics Consultant · 2025 – Present<br>Analytics Consultant · 2022 – 2024</span></div>
+        <ul class="chal">
+          <li>Built and own clinical applications used in clinical data review, including a GxP-validated safety review platform.</li>
+          <li>Lead development of two applications with a small team; sole developer of two more.</li>
+          <li>Designed architecture, delivery pipelines and the team's quality standards; mentor and appraise a direct report.</li>
+          <li>Work directly with client stakeholders on scope, demos and delivery.</li>
+          <li>Earlier: executive dashboards and KPI systems, predictive modelling, analysis presented to C-level leaders.</li>
+        </ul></div></div>
+    <div class="row"><div class="key">2020 – 2022</div>
+      <div><div class="titles">Kantar<span>Consultant, Data Strategy &amp; Engineering · Senior Analyst, Data Strategy &amp; Democratization</span></div>
+        <p>Automation pipelines, reusable ML and knowledge assets, and process optimisation across project delivery.</p></div></div>
+    <div class="row"><div class="key">2019</div>
+      <div><div class="titles">Analytics Quotient (acquired by Kantar)<span>Business Analyst · Bengaluru</span></div></div></div>
+    <div class="row"><div class="key">2017 – 2019</div>
+      <div><div class="titles">Growth Hack Solutions<span>Business Analyst · Hyderabad</span></div>
+        <p>Built a data warehouse for business-critical reporting; hypothesis testing before results reached strategy decisions.</p></div></div>
   </div>
 </section>
 
 <section id="education" aria-labelledby="edu-h">
-  <div class="wrap rv">
-    <p class="eyebrow">Education &amp; certifications</p>
+  <div class="wrap">
+    <p class="eyebrow">Education</p>
     <h2 id="edu-h">Education &amp; certifications</h2>
     <div class="row"><div class="key">2019</div><div><div class="titles">Great Lakes Institute of Management<span>PGP, Data Science &amp; Business Analytics</span></div></div></div>
-    <div class="row"><div class="key">2013 — 2017</div><div><div class="titles">C.V. Raman College of Engineering<span>B.Tech, Electrical Engineering</span></div></div></div>
-    <div class="row"><div class="key">Certifications</div><p class="chips"><span>Python for Data Science</span><span>Data Analysis Using Python</span><span>SQL Fundamentals</span><span>Statistics 101</span><span>Totally Integrated Automation</span></p></div>
-    <div class="row"><div class="key">Recognition</div><p class="chips"><span>Certificate of Recognition — Recent Trends and Innovation in Engineering and Technology</span></p></div>
-    <div class="row"><div class="key">Languages</div><p class="chips"><span>Odia — native</span><span>Hindi — full professional</span><span>English — professional working</span></p></div>
+    <div class="row"><div class="key">2013 – 2017</div><div><div class="titles">C.V. Raman College of Engineering<span>B.Tech, Electrical Engineering</span></div></div></div>
+    <div class="row"><div class="key">Certifications</div><p>Python for Data Science · Data Analysis Using Python · SQL Fundamentals · Statistics 101 · Totally Integrated Automation</p></div>
+    <div class="row"><div class="key">Languages</div><p>Odia (native) · Hindi (full professional) · English (professional working)</p></div>
   </div>
 </section>
 
 <section id="contact" class="contact" aria-labelledby="contact-h">
-  <div class="wrap rv">
-    <p class="eyebrow">Contact &amp; resume</p>
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
     <h2 id="contact-h">Hiring for pharma technology, clinical data platforms or applied AI?</h2>
-    <p class="lede">I'd like to hear about it. The resume has the full history; email is the fastest way to reach me.</p>
+    <p class="lede">The resume has the full history; email is the fastest way to reach me.</p>
     <div class="cta2">
       <a class="btn pri" href="mailto:pradhan.babit@gmail.com">Email me</a>
-      <a class="btn" href="resume.pdf" download>Download resume (PDF)</a>
+      <button class="btn" type="button" data-copy="pradhan.babit@gmail.com" aria-live="polite">Copy email</button>
+      <a class="btn" href="resume.pdf" download>Resume (PDF)</a>
     </div>
     <ul class="links">
       <li><a href="mailto:pradhan.babit@gmail.com">pradhan.babit@gmail.com</a></li>
-      <li><button id="copy" type="button" data-addr="pradhan.babit@gmail.com">Copy email</button></li>
       <li><a href="https://www.linkedin.com/in/babit-ranjan-pradhan/" target="_blank" rel="noopener">LinkedIn</a></li>
       <li><a href="https://github.com/babitrp" target="_blank" rel="noopener">GitHub</a></li>
     </ul>

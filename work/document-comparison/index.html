@@ -32,7 +32,7 @@
 <nav class="nav" aria-label="Main">
   <div class="wrap">
     <a class="brand" href="../../">Babit Ranjan Pradhan<span>.</span></a>
-    <ul id="navlist"><li><a href="../../#work">Projects</a></li><li><a href="../../#expertise">Expertise</a></li><li><a href="../../#engineering">Engineering</a></li><li><a href="../../#ai">AI / ML</a></li><li><a href="../../#impact">Impact</a></li><li><a href="../../#experience">Experience</a></li><li><a href="../../#skills">Skills</a></li><li><a href="../../#contact">Contact</a></li></ul>
+    <ul id="navlist"><li><a href="../../#leadership">Leadership</a></li><li><a href="../../#work">Projects</a></li><li><a href="../../#impact">Impact</a></li><li><a href="../../#engineering">Engineering</a></li><li><a href="../../#ai">Applied AI</a></li><li><a href="../../#skills">Capabilities</a></li><li><a href="../../#experience">Experience</a></li><li><a href="../../#contact">Contact</a></li></ul>
     <div class="nav-r">
       <a class="btn resume" href="../../resume.pdf" download>Resume</a>
       <button class="menu" id="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navlist">
@@ -50,14 +50,36 @@
 <article class="case" id="pr-root" aria-labelledby="pr-h">
   <div class="wrap crumbs"><a href="../../#work">&larr; All work</a></div>
   <header class="wrap case-hero">
-    <p class="eyebrow">Case study · Output QC</p>
+    <p class="eyebrow">Internal tool · Clinical output QC</p>
     <h1 id="pr-h">Document Comparison</h1>
     <p class="intro">An R Shiny application for previewing and comparing clinical documents. Open two versions of an output, in Word, text or PDF, and see every change to the text, the tables and the figures, then export the result for the QC record.</p>
     <dl class="cfacts"><div><dt>Role</dt><dd>Lead developer · small team</dd></div><div><dt>Domain</dt><dd>Clinical output QC</dd></div><div><dt>Validation</dt><dd>Validated by its users</dd></div><div><dt>Walkthrough</dt><dd>Guided live demo</dd></div></dl>
     <div class="cimpact" aria-label="Impact"><div><b>~30 → 2 min</b><span>to QC two versions of an output, against comparing them by hand</span><small>Estimate · per document pair</small></div><div><b>No Acrobat Pro</b><span>licences needed for document comparison</span><small>Licence cost removed</small></div></div>
+    <p class="jump"><a href="#pr-w-h">Jump to the walkthrough &darr;</a></p>
   </header>
+  <section aria-labelledby="pr-01-h"><div class="wrap">
+    <p class="eyebrow"><span class="num">01</span> The problem</p>
+    <h2 id="pr-01-h">Output QC without two printouts and a highlighter.</h2>
+    <p class="big">Output QC meant opening two versions of a table, listing or figure, often one in Word and one in PDF, and comparing them by eye or with paid PDF software.</p>
+  </div></section><section aria-labelledby="pr-02-h"><div class="wrap">
+    <p class="eyebrow"><span class="num">02</span> Why existing approaches fell short</p>
+    <h2 id="pr-02-h">What the old workflow couldn't do.</h2>
+    <p class="big">Generic text-diff tools ignore table structure and figures, and PDF comparison tools compare page layout rather than clinical content, so they flag reflowed lines as changes and miss a moved cell.</p>
+  </div></section><section aria-labelledby="pr-03-h"><div class="wrap">
+    <p class="eyebrow"><span class="num">03</span> My contribution</p>
+    <h2 id="pr-03-h">What I personally designed, built and led.</h2>
+    <div class="row"><div class="key">My role</div><div><p>Lead developer of a small team: design, comparison engine, interface and releases.</p></div></div><div class="row"><div class="key">I designed and built</div><div><ul class="chal"><li>The overall design and the comparison engine core.</li><li>Cross-format comparison, so a Word draft can be checked against its PDF.</li><li>Ongoing quality checks and improvements to the comparison engine.</li></ul></div></div><div class="row"><div class="key">The team</div><div><p>Teammates built parts of the app under my code and design review.</p></div></div>
+  </div></section><section aria-labelledby="pr-04-h"><div class="wrap">
+    <p class="eyebrow"><span class="num">04</span> Technical solution</p>
+    <h2 id="pr-04-h">Architecture and data flow.</h2>
+    <ol class="flow"><li><b>Upload</b><span>DOCX · DOC · TXT · PDF</span></li><li><b>Extraction</b><span>text · tables · images</span></li><li><b>Comparison engine</b><span>word-level diff · cell-level table diff · pixel-level image diff</span></li><li><b>Review</b><span>side by side · highlights · swipe</span></li><li><b>Export</b><span>diff report</span></li></ol><div class="row" style="margin-top:1.5rem"><div class="key">Technologies</div><p class="chips"><span>R</span> · <span>Shiny</span> · <span>document parsing</span> · <span>diff algorithms</span> · <span>image comparison</span></p></div>
+  </div></section><section aria-labelledby="pr-05-h"><div class="wrap">
+    <p class="eyebrow"><span class="num">05</span> Difficult engineering decisions</p>
+    <h2 id="pr-05-h">Decisions, trade-offs and how quality was assured.</h2>
+    <div class="row"><div class="key">Decisions &amp; trade-offs</div><div><ul class="chal"><li><b>Normalise content before comparing.</b> Word and PDF versions can be compared directly. <em class="to">Trade-off: pure layout differences are ignored on purpose.</em></li><li><b>Match table cells by row and column labels.</b> A changed count is reported where it sits, even if the table reflows. <em class="to">Trade-off: it relies on tables having recognisable labels.</em></li><li><b>Pixel-level figure comparison.</b> Any visual change is caught, not just text in the figure. <em class="to">Trade-off: rendering noise needs a tolerance, or trivial differences would be flagged.</em></li></ul></div></div><div class="row"><div class="key">Challenges</div><div><ul class="chal"><li><b>Different formats, same content.</b> A Word draft and its PDF lay out differently, so content is normalised before it is compared.</li><li><b>Tables that reflow.</b> Cells are matched by their row and column labels, so a changed count is reported where it sits.</li><li><b>Figures.</b> Images are compared pixel by pixel and the changed region is outlined.</li></ul></div></div><div class="row"><div class="key">Validation</div><div><p>An internal tool, validated for use by the biostatistics team that uses it.</p></div></div>
+  </div></section>
   <section aria-labelledby="pr-w-h"><div class="wrap">
-    <p class="eyebrow">Walkthrough</p>
+    <p class="eyebrow"><span class="num">06</span> Walkthrough</p>
     <h2 id="pr-w-h">Same table, two data cuts. What moved?</h2>
     <p class="lede">A demographics table built from the public CDISC pilot study, before and after one subject's study status was corrected.</p>
     <p class="label live"><i></i>Guided live demo · runs in your browser</p>
@@ -92,10 +114,10 @@
 </div>
     
   </div></section>
-  <section aria-labelledby="pr-c-h"><div class="wrap">
-    <p class="eyebrow">Case study</p>
-    <h2 id="pr-c-h">Output QC without two printouts and a highlighter.</h2>
-    <div class="row"><div class="key">Problem</div><div><p>Output QC meant opening two versions of a table, listing or figure, often one in Word and one in PDF, and comparing them by eye or with paid PDF software.</p></div></div><div class="row"><div class="key">My role</div><div><p>Lead developer of a small team: design, comparison engine, interface and releases.</p></div></div><div class="row"><div class="key">I designed and built</div><div><ul class="chal"><li>The overall design and the comparison engine core.</li><li>Cross-format comparison, so a Word draft can be checked against its PDF.</li><li>Ongoing quality checks and improvements to the comparison engine.</li></ul></div></div><div class="row"><div class="key">Team</div><div><p>Teammates built parts of the app under my code and design review.</p></div></div><div class="row"><div class="key">Architecture</div><div><ol class="flow"><li><b>Upload</b><span>DOCX · DOC · TXT · PDF</span></li><li><b>Extraction</b><span>text · tables · images</span></li><li><b>Comparison engine</b><span>word-level diff · cell-level table diff · pixel-level image diff</span></li><li><b>Review</b><span>side by side · highlights · swipe</span></li><li><b>Export</b><span>diff report</span></li></ol></div></div><div class="row"><div class="key">Technologies</div><div><p class="chips"><span>R</span><span>Shiny</span><span>document parsing</span><span>diff algorithms</span><span>image comparison</span></p></div></div><div class="row"><div class="key">Decisions &amp; trade-offs</div><div><ul class="chal"><li><b>Normalise content before comparing.</b> Word and PDF versions can be compared directly. <em class="to">Trade-off: pure layout differences are ignored on purpose.</em></li><li><b>Match table cells by row and column labels.</b> A changed count is reported where it sits, even if the table reflows. <em class="to">Trade-off: it relies on tables having recognisable labels.</em></li><li><b>Pixel-level figure comparison.</b> Any visual change is caught, not just text in the figure. <em class="to">Trade-off: rendering noise needs a tolerance, or trivial differences would be flagged.</em></li></ul></div></div><div class="row"><div class="key">Challenges</div><div><ul class="chal"><li><b>Different formats, same content.</b> A Word draft and its PDF lay out differently, so content is normalised before it is compared.</li><li><b>Tables that reflow.</b> Cells are matched by their row and column labels, so a changed count is reported where it sits.</li><li><b>Figures.</b> Images are compared pixel by pixel and the changed region is outlined.</li></ul></div></div><div class="row"><div class="key">Validation</div><div><p>An internal tool, validated for use by the biostatistics team that uses it.</p></div></div><div class="row"><div class="key">Outcomes</div><div><ul class="outc"><li><b>~30 → 2 min</b> per document pair (estimate; see <a href="../../#method">methodology</a>).</li><li><b>No Acrobat Pro</b> licences needed for document comparison.</li></ul></div></div>
+  <section aria-labelledby="pr-07-h"><div class="wrap">
+    <p class="eyebrow"><span class="num">07</span> Impact</p>
+    <h2 id="pr-07-h">What changed for the people using it.</h2>
+    <div class="icards"><div><b>~30 → 2 min</b><span>per document pair (estimate; see <a href="../../#method">methodology</a>).</span></div><div><b>No Acrobat Pro</b><span>licences needed for document comparison.</span></div></div><p class="note">Time figures are my estimates for typical use, not measured results. <a href="../../#method">How they were estimated</a>.</p>
   </div></section>
   <section aria-labelledby="pr-d-h"><div class="wrap">
     <p class="eyebrow">What it does</p>
@@ -117,9 +139,9 @@
   <section aria-labelledby="pr-s-h"><div class="wrap">
     <p class="eyebrow">How it's built</p>
     <h2 id="pr-s-h">A comparison engine with a reviewer's eye.</h2>
-    <div class="row"><div class="key">Application</div><p class="chips"><span>R</span><span>Shiny</span></p></div>
-    <div class="row"><div class="key">Inputs</div><p class="chips"><span>DOCX</span><span>DOC</span><span>TXT</span><span>PDF</span></p></div>
-    <div class="row"><div class="key">Compares</div><p class="chips"><span>words</span><span>table cells</span><span>images</span></p></div>
+    <div class="row"><div class="key">Application</div><p class="chips"><span>R</span> · <span>Shiny</span></p></div>
+    <div class="row"><div class="key">Inputs</div><p class="chips"><span>DOCX</span> · <span>DOC</span> · <span>TXT</span> · <span>PDF</span></p></div>
+    <div class="row"><div class="key">Compares</div><p class="chips"><span>words</span> · <span>table cells</span> · <span>images</span></p></div>
     <div class="row"><div class="key">Demo data</div><p>Counts computed from ADSL in the <span class="mono">pharmaverseadam</span> R package
       (CDISC pilot study). The same correction appears in the <a href="../dataset-comparison/">Dataset Comparison</a> demo, which
       finds it in the dataset; this tool finds its effect on the output.</p></div>

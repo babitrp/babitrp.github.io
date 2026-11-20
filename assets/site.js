@@ -105,11 +105,12 @@ var rv=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 [].forEach.call(document.querySelectorAll(".rv,.metric"),function(el){rv.observe(el);});
 var bar=document.querySelector("#progress i");
 addEventListener("scroll",function(){var max=docEl.scrollHeight-innerHeight;bar.style.transform="scaleX("+(max>0?scrollY/max:0)+")";},{passive:true});
-var copy=document.getElementById("copy");
-if(copy)copy.addEventListener("click",function(){var addr=copy.getAttribute("data-addr"),done=function(){copy.textContent="Copied";copy.classList.add("done");
-  setTimeout(function(){copy.textContent="Copy email";copy.classList.remove("done");},1800);};
-  if(navigator.clipboard)navigator.clipboard.writeText(addr).then(done,function(){copy.textContent="Press Ctrl+C";});
-  else copy.textContent="Press Ctrl+C";});
+[].forEach.call(document.querySelectorAll("[data-copy]"),function(btn){btn.addEventListener("click",function(){
+  var addr=btn.getAttribute("data-copy"),label=btn.textContent,done=function(){btn.textContent="Email copied ✓";btn.classList.add("copied");
+    setTimeout(function(){btn.textContent=label;btn.classList.remove("copied");},2000);};
+  if(navigator.clipboard)navigator.clipboard.writeText(addr).then(done,function(){btn.textContent=addr;});else btn.textContent=addr;});});
+function openMethod(){var d=document.getElementById("method");if(d&&location.hash==="#method"&&d.tagName==="DETAILS"){d.open=true;d.scrollIntoView();}}
+openMethod();addEventListener("hashchange",openMethod);
 [].forEach.call(document.querySelectorAll(".tour[data-kind]"),function(el){
   var t=el.getAttribute("data-kind")==="img"?ImgTour(el,JSON.parse(document.getElementById(el.getAttribute("data-src")).textContent))
     :LiveTour(el,window.__TOURS[el.getAttribute("data-p")]);
