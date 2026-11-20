@@ -8,15 +8,15 @@ Clinical applications on CDISC ADaM, data engineering, AI/ML and application arc
 
 ## Projects
 
-| Project | Page | Walkthrough |
-|---|---|---|
-| Patient Safety Review: patient-level safety review | [/work/safety-review/](https://babitrp.github.io/work/safety-review/) | 12 screens from the app |
-| Dose-escalation design platform | [/work/dose-escalation/](https://babitrp.github.io/work/dose-escalation/) | Live simulator |
-| Document Comparison: clinical document comparison | [/work/document-comparison/](https://babitrp.github.io/work/document-comparison/) | Guided live demo |
-| Dataset Comparison: dataset comparison | [/work/dataset-comparison/](https://babitrp.github.io/work/dataset-comparison/) | Guided live demo |
-| Header-statistics tables | [/work/header-tables/](https://babitrp.github.io/work/header-tables/) | Guided live demo |
-| Synthetic ADaM generator | [/work/synthetic-adam/](https://babitrp.github.io/work/synthetic-adam/) | Guided live demo |
-| Purvadrishti (personal project) | [/work/purvadrishti/](https://babitrp.github.io/work/purvadrishti/) | 8 screens from the [live demo](https://babitrp.github.io/nivesh-demo/) |
+| Project | Type | Page | Walkthrough |
+|---|---|---|---|
+| Patient Safety Review | Production application, GxP-validated | [/work/safety-review/](https://babitrp.github.io/work/safety-review/) | 12 screens from the app |
+| Dose-escalation design platform | Internal tool | [/work/dose-escalation/](https://babitrp.github.io/work/dose-escalation/) | Live simulator |
+| Document Comparison | Internal tool | [/work/document-comparison/](https://babitrp.github.io/work/document-comparison/) | Guided live demo |
+| Dataset Comparison | Internal tool | [/work/dataset-comparison/](https://babitrp.github.io/work/dataset-comparison/) | Guided live demo |
+| Header-statistics tables | Public demonstration | [/work/header-tables/](https://babitrp.github.io/work/header-tables/) | Guided live demo |
+| Synthetic ADaM generator | Public demonstration | [/work/synthetic-adam/](https://babitrp.github.io/work/synthetic-adam/) | Guided live demo |
+| Purvadrishti | Personal project | [/work/purvadrishti/](https://babitrp.github.io/work/purvadrishti/) | 8 screens from the [live demo](https://babitrp.github.io/nivesh-demo/) |
 
 ## Repository layout
 
