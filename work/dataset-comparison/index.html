@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dataset Comparison · Babit Ranjan Pradhan</title>
+<meta name="description" content="Compare two cuts of a clinical dataset by key: added and removed records, changed values, and label, type and length differences. Sole developer.">
+<meta name="author" content="Babit Ranjan Pradhan">
+<link rel="canonical" href="https://babitrp.github.io/work/dataset-comparison/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Babit Ranjan Pradhan">
+<meta property="og:title" content="Dataset Comparison · Babit Ranjan Pradhan">
+<meta property="og:description" content="Compare two cuts of a clinical dataset by key: added and removed records, changed values, and label, type and length differences. Sole developer.">
+<meta property="og:url" content="https://babitrp.github.io/work/dataset-comparison/">
+<meta property="og:image" content="https://babitrp.github.io/assets/og/dataset-comparison.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dataset Comparison · Babit Ranjan Pradhan">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dataset Comparison · Babit Ranjan Pradhan">
+<meta name="twitter:description" content="Compare two cuts of a clinical dataset by key: added and removed records, changed values, and label, type and length differences. Sole developer.">
+<meta name="twitter:image" content="https://babitrp.github.io/assets/og/dataset-comparison.jpg">
+<meta name="theme-color" content="#0E1424">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E1424'/%3E%3Crect x='7' y='15' width='18' height='2.5' rx='1' fill='%238EA4FF'/%3E%3Crect x='14.75' y='8' width='2.5' height='16' rx='1' fill='%23EEF1F8'/%3E%3C/svg%3E">
+<script>try{if(localStorage.getItem("bp-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Dataset Comparison","description":"Compare two cuts of a clinical dataset by key: added and removed records, changed values, and label, type and length differences. Sole developer.","url":"https://babitrp.github.io/work/dataset-comparison/","image":"https://babitrp.github.io/assets/og/dataset-comparison.jpg","author":{"@type":"Person","name":"Babit Ranjan Pradhan","url":"https://babitrp.github.io/"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body data-root="../../">
+<div id="progress" aria-hidden="true"><i></i></div>
+<a href="#id-tour" class="skip">Skip to content</a>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="../../">Babit Ranjan Pradhan<span>.</span></a>
+    <ul id="navlist"><li><a href="../../#work">Projects</a></li><li><a href="../../#expertise">Expertise</a></li><li><a href="../../#engineering">Engineering</a></li><li><a href="../../#ai">AI / ML</a></li><li><a href="../../#impact">Impact</a></li><li><a href="../../#experience">Experience</a></li><li><a href="../../#skills">Skills</a></li><li><a href="../../#contact">Contact</a></li></ul>
+    <div class="nav-r">
+      <a class="btn resume" href="../../resume.pdf" download>Resume</a>
+      <button class="menu" id="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navlist">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <button class="theme" id="theme" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+      </button>
+      <a class="btn pri" href="mailto:pradhan.babit@gmail.com">Email me</a>
+    </div>
+  </div>
+</nav>
+<main id="main">
+
+<article class="case" id="id-root" aria-labelledby="id-h">
+  <div class="wrap crumbs"><a href="../../#work">&larr; All work</a></div>
+  <header class="wrap case-hero">
+    <p class="eyebrow">Case study · Dataset QC</p>
+    <h1 id="id-h">Dataset Comparison</h1>
+    <p class="intro">An R Shiny application that compares two versions of a clinical dataset and shows exactly what changed: records added or removed, values that moved, and variable attributes that no longer match.</p>
+    <dl class="cfacts"><div><dt>Role</dt><dd>Sole developer</dd></div><div><dt>Domain</dt><dd>Clinical dataset QC</dd></div><div><dt>Validation</dt><dd>Validated by its users</dd></div><div><dt>Walkthrough</dt><dd>Guided live demo</dd></div></dl>
+    <div class="cimpact" aria-label="Impact"><div><b>~60 → 5 min</b><span>to see what changed between two data cuts, against writing and reading compare code</span><small>Estimate · per dataset pair</small></div></div>
+  </header>
+  <section aria-labelledby="id-w-h"><div class="wrap">
+    <p class="eyebrow">Walkthrough</p>
+    <h2 id="id-w-h">Two data cuts, one answer to “what changed?”</h2>
+    <p class="lede">Twenty-four ADSL records from the public CDISC pilot study. The second cut has realistic edits: a subject withdrawn, one added, values corrected, a label rewritten and a new derived variable.</p>
+    <p class="label live"><i></i>Guided live demo · runs in your browser</p>
+    <div class="tour" id="id-tour" data-kind="live" data-p="id">
+  <div class="bar"><span class="count">Step 1 of 1</span><progress max="1" value="0" aria-label="Walkthrough progress"></progress></div>
+  <div class="lstage">
+    <div class="app" style="--band:#6D28D9;--band-soft:color-mix(in srgb,#6D28D9 10%,#fff)"><div class="app-bar"><span class="app-brand"><svg viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="var(--band)"/><path d="M5 13.5h10M5 10h6M5 6.5h8" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>Dataset Comparison</span><span class="app-nav" aria-hidden="true"><span class="on">Compare datasets</span></span><span class="app-right" aria-hidden="true"></span></div><div class="app-body"><div class="app-side">
+  <p class="app-sec">Datasets</p>
+  <div class="files">
+    <div class="file"><b>adsl_cut1.xpt</b><span id="id-fa"></span></div>
+    <div class="file"><b>adsl_cut2.xpt</b><span id="id-fb"></span></div>
+  </div>
+  <p class="app-sec">Key variables</p>
+  <div class="keys" role="group" aria-label="Key variables"><span class="sr">Match on</span></div>
+  <p class="app-sec">Export</p>
+  <button class="btn" id="id-dl" type="button">Download differences (CSV)</button>
+  </div><div class="app-main"><div class="app-head"><b>ADSL · cut 1 against cut 2</b><span>Records matched on the key variables in the sidebar</span></div>
+  <p class="msg" id="id-msg" role="alert"></p>
+  <div class="kpis" id="id-kpis" aria-live="polite"></div>
+  <div class="app-card"><div class="app-card-h"><span>Differences</span></div><div class="app-card-b">
+    <div class="tabs" role="tablist" aria-label="Comparison results">
+      <button role="tab" aria-selected="true" data-t="rec" id="id-t-rec">Records</button>
+      <button role="tab" aria-selected="false" data-t="var" id="id-t-var">Variables</button>
+      <button role="tab" aria-selected="false" data-t="sum" id="id-t-sum">Summary by variable</button>
+    </div>
+    <div id="id-pane" role="tabpanel" aria-labelledby="id-t-rec"></div></div></div></div></div></div>
+    <button class="hot" type="button" aria-label=""></button>
+    <div class="tip" aria-live="polite" role="status"></div>
+  </div>
+  <div class="controls">
+    <button class="btn" type="button" data-a="prev">Previous</button><span class="hint"></span>
+    <button class="btn" type="button" data-a="restart" hidden>Restart</button><button class="btn pri" type="button" data-a="next">Next</button>
+  </div>
+</div>
+    
+  </div></section>
+  <section aria-labelledby="id-c-h"><div class="wrap">
+    <p class="eyebrow">Case study</p>
+    <h2 id="id-c-h">One answer to the question every data refresh raises.</h2>
+    <div class="row"><div class="key">Problem</div><div><p>Each data refresh raised the same question, what changed, and it was answered by writing one-off comparison code for each dataset and reading the output.</p></div></div><div class="row"><div class="key">My role</div><div><p>Sole developer: design, comparison logic, interface and releases.</p></div></div><div class="row"><div class="key">I designed and built</div><div><ul class="chal"><li>Key-based record matching with a uniqueness check before any comparison.</li><li>Value, label, type and length comparison across SAS, XPT, CSV and Excel.</li><li>The review interface and the difference report.</li></ul></div></div><div class="row"><div class="key">Team</div><div><p>Built alone. The biostatistics team that uses it defined the checks it needed and accepted the app.</p></div></div><div class="row"><div class="key">Architecture</div><div><ol class="flow"><li><b>Read</b><span>SAS · XPT · CSV · Excel</span></li><li><b>Match</b><span>user-chosen keys · uniqueness check</span></li><li><b>Compare</b><span>added and removed records · changed values · labels · types · lengths</span></li><li><b>Review</b><span>filters · old against new</span></li><li><b>Export</b><span>difference report</span></li></ol></div></div><div class="row"><div class="key">Technologies</div><div><p class="chips"><span>R</span><span>Shiny</span><span>SAS / XPT readers</span><span>CDISC ADaM</span></p></div></div><div class="row"><div class="key">Decisions &amp; trade-offs</div><div><ul class="chal"><li><b>Match on keys, not row order.</b> Sorting or inserted rows don't produce false differences. <em class="to">Trade-off: the user has to choose keys, so their uniqueness is checked first.</em></li><li><b>Compare metadata as well as values.</b> Truncated lengths and label drift surface before submission. <em class="to">Trade-off: format-only changes appear too, so attribute differences are listed separately.</em></li></ul></div></div><div class="row"><div class="key">Challenges</div><div><ul class="chal"><li><b>Keys that aren't keys.</b> Duplicate keys are caught before anything is compared, with a count for each version.</li><li><b>Format differences.</b> Labels, types and lengths are compared as well as values, so a truncated variable surfaces before submission.</li></ul></div></div><div class="row"><div class="key">Validation</div><div><p>An internal tool, validated for use by the biostatistics team that uses it.</p></div></div><div class="row"><div class="key">Outcomes</div><div><ul class="outc"><li><b>~60 → 5 min</b> per dataset pair (estimate; see <a href="../../#method">methodology</a>).</li><li><b>No compare code</b> to write for routine data-cut checks.</li></ul></div></div>
+  </div></section>
+  <section aria-labelledby="id-d-h"><div class="wrap">
+    <p class="eyebrow">What it does</p>
+    <h2 id="id-d-h">Answers the question every data refresh raises.</h2>
+    <div class="row"><div class="key"><em>01</em> Read</div><div><h3>The formats clinical data arrives in</h3>
+      <p>SAS datasets, XPT transport files, CSV and Excel, in any combination. Compare a SAS dataset with its XPT export,
+      or last month's cut with this month's.</p></div></div>
+    <div class="row"><div class="key"><em>02</em> Match</div><div><h3>Record-level, by key variables</h3>
+      <p>Rows are matched on the keys you choose, such as USUBJID, PARAMCD and AVISIT, not on row order. Added, removed
+      and changed records are flagged, and every changed value shows its old and new value side by side. Keys that
+      don't identify a row uniquely are caught before the comparison runs.</p></div></div>
+    <div class="row"><div class="key"><em>03</em> Metadata</div><div><h3>Variable attributes</h3>
+      <p>Labels, types and lengths are compared as well as values, so a truncated length or a changed label is found
+      before it reaches a submission.</p></div></div>
+    <div class="row"><div class="key"><em>04</em> Report</div><div><h3>Summary and export</h3>
+      <p>A summary of what changed, by record and by variable, with a downloadable report to attach to a QC record.</p></div></div>
+  </div></section>
+  
+  <section aria-labelledby="id-s-h"><div class="wrap">
+    <p class="eyebrow">How it's built</p>
+    <h2 id="id-s-h">Small surface, strict comparisons.</h2>
+    <div class="row"><div class="key">Application</div><p class="chips"><span>R</span><span>Shiny</span></p></div>
+    <div class="row"><div class="key">Inputs</div><p class="chips"><span>SAS</span><span>XPT</span><span>CSV</span><span>Excel</span></p></div>
+    <div class="row"><div class="key">Compares</div><p class="chips"><span>records by key</span><span>values</span><span>labels</span><span>types</span><span>lengths</span></p></div>
+    <div class="row"><div class="key">Demo data</div><p>ADSL records from the <span class="mono">pharmaverseadam</span> R package
+      (CDISC pilot study, <span class="mono">CDISCPILOT01</span>). The second cut's edits were made for this demo.</p></div>
+  </div></section>
+  <nav class="wrap pager" aria-label="More case studies">
+    <a href="../document-comparison/"><small>Previous</small>&larr; Document Comparison</a>
+    <a href="../header-tables/" style="text-align:right"><small>Next</small>Header-statistics tables &rarr;</a>
+  </nav>
+</article>
+</main>
+<footer><div class="wrap"><p>© 2026 Babit Ranjan Pradhan · Walkthroughs use public CDISC pilot data (pharmaverseadam) · No client data</p></div></footer>
+<script src="../../assets/site.js" defer></script>
+<script>window.__TOURS={"id":{"reset":[{"check":["input[value=\"USUBJID\"]",true]},{"check":["input[value=\"SITEID\"]",false]},{"check":["input[value=\"TRT01A\"]",false]},{"check":["input[value=\"SEX\"]",false]},{"tab":"[data-t=\"rec\"]"},{"tab":".filterbar [data-f=\"diff\"]"}],"steps":[{"t":".files","c":"Two cuts of ADSL from the CDISC pilot study, one data refresh apart."},{"t":".keys label","c":"Records are matched on key variables, not on row order. USUBJID identifies each subject."},{"t":"#id-kpis","c":"The summary first: one subject added, one removed, two records with changed values and three attribute differences."},{"t":"td.cell-chg","pre":[{"tab":"[data-t=\"rec\"]"},{"tab":".filterbar [data-f=\"diff\"]"}],"c":"Each changed value shows old against new. Subject 01-701-1028 went from completed to discontinued."},{"t":"td.cell-chg","pre":[{"tab":"[data-t=\"var\"]"}],"c":"Metadata is compared too: a rewritten TRTDURD label and a longer RACE variable."},{"t":"tr.r-add","pre":[{"tab":"[data-t=\"var\"]"}],"c":"AGEGR1 exists only in the second cut, so it is reported as a new variable."},{"t":"input[value=\"SITEID\"]","pre":[{"tab":"[data-t=\"rec\"]"}],"go":[{"check":["input[value=\"SITEID\"]",true]},{"check":["input[value=\"USUBJID\"]",false]}],"c":"Now match on SITEID alone, a key that cannot identify one record."},{"t":"#id-msg","pre":[{"check":["input[value=\"SITEID\"]",true]},{"check":["input[value=\"USUBJID\"]",false]}],"c":"Duplicate keys are caught before anything is compared, with a count for each cut."},{"t":"#id-dl","pre":[{"check":["input[value=\"USUBJID\"]",true]},{"check":["input[value=\"SITEID\"]",false]}],"c":"Back on USUBJID. Download every difference as a CSV for the QC record."}]}};</script>
+
+<script type="application/json" id="id-idata">{"A":[{"USUBJID":"01-701-1015","SITEID":"701","AGE":63,"SEX":"F","RACE":"WHITE","TRT01A":"Placebo","EOSSTT":"COMPLETED","TRTDURD":182},{"USUBJID":"01-701-1023","SITEID":"701","AGE":64,"SEX":"M","RACE":"WHITE","TRT01A":"Placebo","EOSSTT":"DISCONTINUED","TRTDURD":28},{"USUBJID":"01-701-1028","SITEID":"701","AGE":71,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline High Dose","EOSSTT":"COMPLETED","TRTDURD":180},{"USUBJID":"01-701-1033","SITEID":"701","AGE":74,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"DISCONTINUED","TRTDURD":14},{"USUBJID":"01-701-1034","SITEID":"701","AGE":77,"SEX":"F","RACE":"WHITE","TRT01A":"Xanomeline High Dose","EOSSTT":"COMPLETED","TRTDURD":183},{"USUBJID":"01-701-1047","SITEID":"701","AGE":85,"SEX":"F","RACE":"WHITE","TRT01A":"Placebo","EOSSTT":"DISCONTINUED","TRTDURD":26},{"USUBJID":"01-701-1097","SITEID":"701","AGE":68,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"COMPLETED","TRTDURD":190},{"USUBJID":"01-701-1111","SITEID":"701","AGE":81,"SEX":"F","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"DISCONTINUED","TRTDURD":10},{"USUBJID":"01-701-1115","SITEID":"701","AGE":84,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"DISCONTINUED","TRTDURD":55},{"USUBJID":"01-701-1118","SITEID":"701","AGE":52,"SEX":"M","RACE":"WHITE","TRT01A":"Placebo","EOSSTT":"COMPLETED","TRTDURD":182},{"USUBJID":"01-701-1130","SITEID":"701","AGE":84,"SEX":"M","RACE":"WHITE","TRT01A":"Placebo","EOSSTT":"COMPLETED","TRTDURD":183},{"USUBJID":"01-701-1133","SITEID":"701","AGE":81,"SEX":"F","RACE":"WHITE","TRT01A":"Xanomeline High Dose","EOSSTT":"COMPLETED","TRTDURD":183},{"USUBJID":"01-701-1146","SITEID":"701","AGE":75,"SEX":"F","RACE":"WHITE","TRT01A":"Xanomeline High Dose","EOSSTT":"DISCONTINUED","TRTDURD":38},{"USUBJID":"01-701-1148","SITEID":"701","AGE":57,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline High Dose","EOSSTT":"COMPLETED","TRTDURD":182},{"USUBJID":"01-701-1153","SITEID":"701","AGE":79,"SEX":"F","RACE":"WHITE","TRT01A":"Placebo","EOSSTT":"COMPLETED","TRTDURD":175},{"USUBJID":"01-701-1180","SITEID":"701","AGE":56,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline High Dose","EOSSTT":"DISCONTINUED","TRTDURD":35},{"USUBJID":"01-701-1181","SITEID":"701","AGE":79,"SEX":"F","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"DISCONTINUED","TRTDURD":5},{"USUBJID":"01-701-1188","SITEID":"701","AGE":71,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"DISCONTINUED","TRTDURD":38},{"USUBJID":"01-701-1192","SITEID":"701","AGE":80,"SEX":"F","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"COMPLETED","TRTDURD":183},{"USUBJID":"01-701-1203","SITEID":"701","AGE":81,"SEX":"F","RACE":"BLACK OR AFRICAN AMERICAN","TRT01A":"Placebo","EOSSTT":"COMPLETED","TRTDURD":183},{"USUBJID":"01-701-1211","SITEID":"701","AGE":76,"SEX":"F","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"DISCONTINUED","TRTDURD":59},{"USUBJID":"01-701-1234","SITEID":"701","AGE":69,"SEX":"M","RACE":"WHITE","TRT01A":"Placebo","EOSSTT":"COMPLETED","TRTDURD":177},{"USUBJID":"01-701-1239","SITEID":"701","AGE":56,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline High Dose","EOSSTT":"COMPLETED","TRTDURD":181},{"USUBJID":"01-701-1275","SITEID":"701","AGE":61,"SEX":"M","RACE":"AMERICAN INDIAN OR ALASKA NATIVE","TRT01A":"Xanomeline High Dose","EOSSTT":"DISCONTINUED","TRTDURD":114}],"B":[{"USUBJID":"01-701-1015","SITEID":"701","AGE":63,"SEX":"F","RACE":"WHITE","TRT01A":"Placebo","EOSSTT":"COMPLETED","TRTDURD":182,"AGEGR1":"18-64"},{"USUBJID":"01-701-1023","SITEID":"701","AGE":64,"SEX":"M","RACE":"WHITE","TRT01A":"Placebo","EOSSTT":"DISCONTINUED","TRTDURD":28,"AGEGR1":"18-64"},{"USUBJID":"01-701-1028","SITEID":"701","AGE":71,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline High Dose","EOSSTT":"DISCONTINUED","TRTDURD":166,"AGEGR1":">64"},{"USUBJID":"01-701-1033","SITEID":"701","AGE":74,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"DISCONTINUED","TRTDURD":14,"AGEGR1":">64"},{"USUBJID":"01-701-1034","SITEID":"701","AGE":77,"SEX":"F","RACE":"WHITE","TRT01A":"Xanomeline High Dose","EOSSTT":"COMPLETED","TRTDURD":183,"AGEGR1":">64"},{"USUBJID":"01-701-1097","SITEID":"701","AGE":68,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"COMPLETED","TRTDURD":190,"AGEGR1":">64"},{"USUBJID":"01-701-1111","SITEID":"701","AGE":81,"SEX":"F","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"DISCONTINUED","TRTDURD":10,"AGEGR1":">64"},{"USUBJID":"01-701-1115","SITEID":"701","AGE":84,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"DISCONTINUED","TRTDURD":55,"AGEGR1":">64"},{"USUBJID":"01-701-1118","SITEID":"701","AGE":52,"SEX":"M","RACE":"WHITE","TRT01A":"Placebo","EOSSTT":"COMPLETED","TRTDURD":182,"AGEGR1":"18-64"},{"USUBJID":"01-701-1130","SITEID":"701","AGE":85,"SEX":"M","RACE":"WHITE","TRT01A":"Placebo","EOSSTT":"COMPLETED","TRTDURD":183,"AGEGR1":">64"},{"USUBJID":"01-701-1133","SITEID":"701","AGE":81,"SEX":"F","RACE":"WHITE","TRT01A":"Xanomeline High Dose","EOSSTT":"COMPLETED","TRTDURD":183,"AGEGR1":">64"},{"USUBJID":"01-701-1146","SITEID":"701","AGE":75,"SEX":"F","RACE":"WHITE","TRT01A":"Xanomeline High Dose","EOSSTT":"DISCONTINUED","TRTDURD":38,"AGEGR1":">64"},{"USUBJID":"01-701-1148","SITEID":"701","AGE":57,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline High Dose","EOSSTT":"COMPLETED","TRTDURD":182,"AGEGR1":"18-64"},{"USUBJID":"01-701-1153","SITEID":"701","AGE":79,"SEX":"F","RACE":"WHITE","TRT01A":"Placebo","EOSSTT":"COMPLETED","TRTDURD":175,"AGEGR1":">64"},{"USUBJID":"01-701-1180","SITEID":"701","AGE":56,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline High Dose","EOSSTT":"DISCONTINUED","TRTDURD":35,"AGEGR1":"18-64"},{"USUBJID":"01-701-1181","SITEID":"701","AGE":79,"SEX":"F","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"DISCONTINUED","TRTDURD":5,"AGEGR1":">64"},{"USUBJID":"01-701-1188","SITEID":"701","AGE":71,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"DISCONTINUED","TRTDURD":38,"AGEGR1":">64"},{"USUBJID":"01-701-1192","SITEID":"701","AGE":80,"SEX":"F","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"COMPLETED","TRTDURD":183,"AGEGR1":">64"},{"USUBJID":"01-701-1203","SITEID":"701","AGE":81,"SEX":"F","RACE":"BLACK OR AFRICAN AMERICAN","TRT01A":"Placebo","EOSSTT":"COMPLETED","TRTDURD":183,"AGEGR1":">64"},{"USUBJID":"01-701-1211","SITEID":"701","AGE":76,"SEX":"F","RACE":"WHITE","TRT01A":"Xanomeline Low Dose","EOSSTT":"DISCONTINUED","TRTDURD":59,"AGEGR1":">64"},{"USUBJID":"01-701-1234","SITEID":"701","AGE":69,"SEX":"M","RACE":"WHITE","TRT01A":"Placebo","EOSSTT":"COMPLETED","TRTDURD":177,"AGEGR1":">64"},{"USUBJID":"01-701-1239","SITEID":"701","AGE":56,"SEX":"M","RACE":"WHITE","TRT01A":"Xanomeline High Dose","EOSSTT":"COMPLETED","TRTDURD":181,"AGEGR1":"18-64"},{"USUBJID":"01-701-1275","SITEID":"701","AGE":61,"SEX":"M","RACE":"AMERICAN INDIAN OR ALASKA NATIVE","TRT01A":"Xanomeline High Dose","EOSSTT":"DISCONTINUED","TRTDURD":114,"AGEGR1":"18-64"},{"USUBJID":"01-701-1287","SITEID":"701","AGE":56,"SEX":"F","RACE":"WHITE","TRT01A":"Xanomeline High Dose","EOSSTT":"COMPLETED","TRTDURD":183,"AGEGR1":"18-64"}],"mA":[["USUBJID","Unique Subject Identifier","Char",11],["SITEID","Study Site Identifier","Char",3],["AGE","Age","Num",8],["SEX","Sex","Char",1],["RACE","Race","Char",32],["TRT01A","Actual Treatment for Period 01","Char",20],["EOSSTT","End of Study Status","Char",12],["TRTDURD","Total Treatment Duration (Days)","Num",8]],"mB":[["USUBJID","Unique Subject Identifier","Char",11],["SITEID","Study Site Identifier","Char",3],["AGE","Age","Num",8],["SEX","Sex","Char",1],["RACE","Race","Char",40],["TRT01A","Actual Treatment for Period 01","Char",20],["EOSSTT","End of Study Status","Char",12],["TRTDURD","Treatment Duration (Days)","Num",8],["AGEGR1","Pooled Age Group 1","Char",5]]}</script>
+<script>
+(function(){
+"use strict";var ROOT=document.getElementById("id-root");
+var D=JSON.parse(document.getElementById("id-idata").textContent),$=function(s){return ROOT.querySelector(s);};
+var keys=["USUBJID"],tab="rec",flt="diff",R=null;
+var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});};
+var common=D.mA.map(function(m){return m[0];}).filter(function(v){return D.mB.some(function(m){return m[0]===v;});});
+$("#id-fa").textContent=D.A.length+" records · "+D.mA.length+" variables";
+$("#id-fb").textContent=D.B.length+" records · "+D.mB.length+" variables";
+var kb=ROOT.querySelector(".keys");
+["USUBJID","SITEID","TRT01A","SEX"].forEach(function(v){var l=document.createElement("label");
+  l.innerHTML='<input type="checkbox" value="'+v+'"'+(v==="USUBJID"?" checked":"")+'> '+v;kb.appendChild(l);});
+kb.addEventListener("change",function(){keys=[].slice.call(kb.querySelectorAll("input:checked")).map(function(i){return i.value;});compare();});
+
+function compare(){
+  var msg=$("#id-msg");
+  if(!keys.length){msg.textContent="Choose at least one key variable.";R=null;render();return;}
+  var key=function(r){return keys.map(function(k){return r[k];}).join("|");},dup=function(rows){var s={},d=0;
+    rows.forEach(function(r){var k=key(r);if(s[k])d++;s[k]=1;});return d;};
+  var dA=dup(D.A),dB=dup(D.B);
+  if(dA||dB){msg.textContent="Keys "+keys.join(" + ")+" are not unique ("+dA+" duplicates in cut 1, "+dB+
+    " in cut 2). Add a key variable so each record is identified once.";R=null;render();return;}
+  msg.textContent="";
+  var ia={},ib={};D.A.forEach(function(r){ia[key(r)]=r;});D.B.forEach(function(r){ib[key(r)]=r;});
+  var all=Object.keys(ia).concat(Object.keys(ib).filter(function(k){return!ia[k];})).sort(),rows=[],vc={};
+  all.forEach(function(k){var a=ia[k],b=ib[k];
+    if(!b)rows.push({k:k,s:"del",r:a});else if(!a)rows.push({k:k,s:"add",r:b});
+    else{var ch=common.filter(function(v){return String(a[v])!==String(b[v]);});
+      ch.forEach(function(v){vc[v]=(vc[v]||0)+1;});rows.push({k:k,s:ch.length?"chg":"same",a:a,b:b,ch:ch});}});
+  var attr=[];var mb={};D.mB.forEach(function(m){mb[m[0]]=m;});var ma={};D.mA.forEach(function(m){ma[m[0]]=m;});
+  D.mA.forEach(function(m){var o=mb[m[0]];if(!o)attr.push({v:m[0],s:"del",a:m,b:null});
+    else{var d=[];if(m[1]!==o[1])d.push("Label");if(m[2]!==o[2])d.push("Type");if(m[3]!==o[3])d.push("Length");
+      attr.push({v:m[0],s:d.length?"chg":"same",a:m,b:o,d:d});}});
+  D.mB.forEach(function(m){if(!ma[m[0]])attr.push({v:m[0],s:"add",a:null,b:m});});
+  R={rows:rows,attr:attr,vc:vc};render();}
+
+function cnt(s){return R.rows.filter(function(r){return r.s===s;}).length;}
+function render(){
+  if(!R){$("#id-kpis").innerHTML="";$("#id-pane").innerHTML="";$("#id-dl").disabled=true;return;}
+  $("#id-dl").disabled=false;
+  var nv=Object.keys(R.vc).reduce(function(a,k){return a+R.vc[k];},0),na=R.attr.filter(function(a){return a.s!=="same";}).length;
+  $("#id-kpis").innerHTML=[["Matched",cnt("same")+cnt("chg"),""],["Added",cnt("add"),"ok"],["Removed",cnt("del"),"warn"],
+    ["Changed records",cnt("chg"),"warn"],["Changed values",nv,"warn"],["Attribute diffs",na,"warn"]].map(function(k){
+    return '<div class="'+(k[1]?k[2]:"")+'"><b>'+k[1]+'</b><span>'+k[0]+'</span></div>';}).join("");
+  var p=$("#id-pane");
+  if(tab==="rec"){
+    var vars=keys.concat(common.filter(function(v){return keys.indexOf(v)<0;}));
+    var fb='<div class="filterbar" role="group" aria-label="Show">'+[["all","All"],["diff","Differences only"],["add","Added"],["del","Removed"],["chg","Changed"]]
+      .map(function(f){return '<button class="btn" type="button" data-f="'+f[0]+'" aria-pressed="'+(flt===f[0])+'">'+f[1]+'</button>';}).join("")+'</div>';
+    var rows=R.rows.filter(function(r){return flt==="all"||(flt==="diff"?r.s!=="same":r.s===flt);});
+    var h='<div class="tbl-wrap tall"><table class="dt"><thead><tr><th scope="col">Status</th>'+vars.map(function(v){return'<th scope="col">'+v+'</th>';}).join("")+'</tr></thead><tbody>';
+    rows.forEach(function(r){var lab={same:"Same",chg:"Changed",add:"Added",del:"Removed"}[r.s];
+      h+='<tr class="r-'+r.s+'"><td><span class="tag t-'+r.s+'">'+lab+'</span></td>';
+      vars.forEach(function(v){
+        if(r.s==="chg"&&r.ch.indexOf(v)>=0)h+='<td class="cell-chg"><span class="old">'+esc(r.a[v])+'</span><span class="new">'+esc(r.b[v])+'</span></td>';
+        else h+='<td>'+esc((r.r||r.b)[v])+'</td>';});h+='</tr>';});
+    if(!rows.length)h+='<tr><td colspan="'+(vars.length+1)+'">No records match this filter.</td></tr>';
+    p.innerHTML=fb+h+'</tbody></table></div>';
+    p.querySelectorAll(".filterbar .btn").forEach(function(b){b.addEventListener("click",function(){flt=b.dataset.f;render();});});}
+  else if(tab==="var"){
+    var h2='<div class="tbl-wrap"><table class="dt"><thead><tr><th scope="col">Variable</th><th scope="col">Status</th><th scope="col">Label</th><th scope="col">Type</th><th scope="col">Length</th></tr></thead><tbody>';
+    R.attr.forEach(function(a){var lab={same:"Same",chg:"Changed",add:"Added",del:"Removed"}[a.s];
+      var f=function(i,n){var x=a.a?a.a[i]:null,y=a.b?a.b[i]:null;
+        if(a.s==="chg"&&a.d.indexOf(n)>=0)return'<td class="cell-chg"><span class="old">'+esc(x)+'</span><span class="new">'+esc(y)+'</span></td>';
+        return'<td>'+esc(y!=null?y:x)+'</td>';};
+      h2+='<tr class="r-'+a.s+'"><th scope="row">'+a.v+'</th><td><span class="tag t-'+a.s+'">'+lab+'</span></td>'+f(1,"Label")+f(2,"Type")+f(3,"Length")+'</tr>';});
+    p.innerHTML=h2+'</tbody></table></div>';}
+  else{
+    var h3='<div class="tbl-wrap"><table class="dt"><thead><tr><th scope="col">Variable</th><th scope="col">Values changed</th><th scope="col">Of matched records</th></tr></thead><tbody>',
+      m=cnt("same")+cnt("chg");
+    common.forEach(function(v){var n=R.vc[v]||0;h3+='<tr'+(n?' class="r-chg"':'')+'><th scope="row">'+v+'</th><td>'+n+'</td><td>'+(m?(100*n/m).toFixed(1):0)+'%</td></tr>';});
+    p.innerHTML=h3+'</tbody></table></div><p class="note">Variables present in only one cut are listed under Variables.</p>';}}
+
+[].forEach.call(ROOT.querySelectorAll(".tabs button"),function(b){b.addEventListener("click",function(){
+  tab=b.dataset.t;[].forEach.call(ROOT.querySelectorAll(".tabs button"),function(o){o.setAttribute("aria-selected",o===b);});
+  $("#id-pane").setAttribute("aria-labelledby",b.id);render();});});
+
+$("#id-dl").addEventListener("click",function(){if(!R)return;
+  var q=function(s){s=String(s==null?"":s);if(/^[=+\-@]/.test(s))s="'"+s;return'"'+s.replace(/"/g,'""')+'"';};
+  var L=[["section","key","variable","status","cut1","cut2"].join(",")];
+  R.rows.forEach(function(r){if(r.s==="add"||r.s==="del")L.push([q("record"),q(r.k),q(""),q(r.s==="add"?"added":"removed"),q(""),q("")].join(","));
+    else if(r.s==="chg")r.ch.forEach(function(v){L.push([q("value"),q(r.k),q(v),q("changed"),q(r.a[v]),q(r.b[v])].join(","));});});
+  R.attr.forEach(function(a){if(a.s==="add"||a.s==="del")L.push([q("variable"),q(""),q(a.v),q(a.s==="add"?"added":"removed"),q(""),q("")].join(","));
+    else if(a.s==="chg")a.d.forEach(function(d){var i={Label:1,Type:2,Length:3}[d];L.push([q("attribute"),q(d),q(a.v),q("changed"),q(a.a[i]),q(a.b[i])].join(","));});});
+  var u=URL.createObjectURL(new Blob([L.join("\r\n")],{type:"text/csv"})),el=document.createElement("a");
+  el.href=u;el.download="adsl_cut1_vs_cut2_differences.csv";document.body.appendChild(el);el.click();el.remove();
+  setTimeout(function(){URL.revokeObjectURL(u);},1000);});
+compare();
+})();
+</script>
+
+</body>
+</html>

@@ -14,7 +14,7 @@ document.addEventListener("keydown",function(e){
   if(e.key!=="ArrowRight"&&e.key!=="ArrowLeft")return;
   for(var i=0;i<tours.length;i++)if(visible(tours[i].root)&&tours[i].active){e.preventDefault();tours[i].key(e.key);return;}});
 
-/* Screenshot click-through, same behaviour as the Patient Explorer walkthrough */
+/* Screenshot click-through, same behaviour as the Patient Safety Review walkthrough */
 window.ImgTour=function(root,data){
   var q=function(s){return root.querySelector(s);},stage=q(".stage"),hot=q(".hot"),tip=q(".tip"),imgs=root.querySelectorAll(".stage img"),
     front=0,cur=-1,steps=data.steps,prevB=q('[data-a="prev"]'),nextB=q('[data-a="next"]'),resB=q('[data-a="restart"]'),token=0;
