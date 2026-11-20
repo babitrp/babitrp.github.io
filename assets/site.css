@@ -734,6 +734,46 @@ kbd{font-family:"IBM Plex Mono",monospace;font-size:.75rem;border:1px solid var(
 #sg-root .app .sg-meta{margin:0}
 #sg-root .app .sg-checks li{font-size:.75rem}
 
+.agrid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.acard{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:1.15rem 1.2rem;min-width:0}
+.acard .cat{font-family:"IBM Plex Mono",monospace;font-size:.625rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0}
+.acard h3{font-size:1.0625rem;margin:.35rem 0 .6rem}
+.acard figure{margin:0 0 .8rem}
+.acard figcaption{font-family:"IBM Plex Mono",monospace;font-size:.6875rem;line-height:1.5;color:var(--ink-soft);margin-top:.35rem}
+.pmio{display:grid;gap:.45rem;margin:0}
+.pmio>div{display:grid;grid-template-columns:6.5rem 1fr;gap:.6rem}
+.pmio dt{font-family:"IBM Plex Mono",monospace;font-size:.625rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);padding-top:.2rem}
+.pmio dd{margin:0;font-size:.9rem;line-height:1.5;color:var(--ink)}
+.adata{margin-top:.7rem}
+.adata summary{font-family:"IBM Plex Mono",monospace;font-size:.6875rem;letter-spacing:.08em;color:var(--ink-soft);cursor:pointer;min-height:24px}
+.adata table{margin-top:.5rem;font-size:.75rem;width:100%}
+svg.az{width:100%;height:auto;display:block;overflow:visible;
+  --s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--grid:var(--rule)}
+:root[data-theme="dark"] svg.az{--s1:#3987e5;--s2:#d95926;--s3:#199e70}
+svg.az text{fill:var(--ink-soft);font-size:11px}
+svg.az .lb,svg.az .vl{fill:var(--ink)}
+svg.az .vl{font-variant-numeric:tabular-nums}
+svg.az .ax{font-size:10.5px}
+svg.az .tk{font-size:10px}
+svg.az .an{font-size:10px;fill:var(--ink-soft)}
+svg.az .gr{stroke:var(--grid);stroke-width:1}
+svg.az .axl{stroke:var(--ink-soft);stroke-width:1}
+svg.az .zero,svg.az .ref{stroke:var(--ink-soft);stroke-width:1;stroke-dasharray:3 3}
+svg.az .quad{fill:var(--ink-soft);opacity:.08}
+svg.az .ci{stroke:var(--s1);stroke-width:2;stroke-linecap:round}
+svg.az .ci.ns{stroke:var(--ink-soft);opacity:.6}
+svg.az .m{stroke:var(--panel);stroke-width:2}
+svg.az .s1{fill:var(--s1)}svg.az .s2{fill:var(--s2)}svg.az .s3{fill:var(--s3)}
+svg.az .m.hollow{fill:var(--panel);stroke:var(--ink-soft);stroke-width:2}
+svg.az .pt{stroke-width:1;fill-opacity:.85}
+svg.az .ln{fill:none;stroke-width:2;stroke-linejoin:round}
+svg.az .ln.s1{stroke:var(--s1)}svg.az .ln.s2{stroke:var(--s2)}svg.az .ln.s3{stroke:var(--s3)}
+svg.az .hit{fill:transparent}
+svg.az .hit:hover{fill:var(--ink-soft);fill-opacity:.06}
+svg.az .m:hover{stroke:var(--ink)}
+@media(max-width:62rem){.agrid2{grid-template-columns:1fr}}
+@media(max-width:40rem){.pmio>div{grid-template-columns:1fr;gap:.1rem}}
+
 .pillars{list-style:none;padding:0;margin:1.75rem 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem}
 .pillars li{border:1px solid var(--hero-rule);border-radius:10px;padding:.85rem 1rem;background:rgba(255,255,255,.03)}
 .pillars b{display:block;font-family:Archivo,system-ui,sans-serif;font-weight:600;color:#fff;font-size:.9375rem}
